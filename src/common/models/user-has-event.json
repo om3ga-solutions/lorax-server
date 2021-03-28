@@ -1,0 +1,105 @@
+{
+  "name": "UserHasEvent",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user_has_event"
+    }
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "eventId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "confirmed": {
+      "type": "string",
+      "postgresql": {
+        "columnName": "confirmed",
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    },
+    "declined": {
+      "type": "string",
+      "postgresql": {
+        "columnName": "declined",
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    },
+    "feedbackGuessGuestCount": {
+      "type": "number",
+      "postgresql": {
+        "columnName": "feedback_guess_guest_count",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "feedbackGuessTrashCount": {
+      "type": "number",
+      "postgresql": {
+        "columnName": "feedback_guess_trash_count",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "confirmationNotificationSent": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "confirmation_notification_sent",
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    },
+    "feedbackNotificationSent": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "feedback_notification_sent",
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    },
+    "event": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "eventId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

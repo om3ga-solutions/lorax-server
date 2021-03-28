@@ -1,0 +1,244 @@
+{
+  "name": "GPS",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "lat": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "lat",
+        "dataType": "numeric",
+        "nullable": "NO"
+      }
+    },
+    "long": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "long",
+        "dataType": "numeric",
+        "nullable": "NO"
+      }
+    },
+    "accuracy": {
+      "type": "number",
+      "required": true
+    },
+    "geocell": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "gpsSourceId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "gps_source_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "continentId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "continent_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "countryId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "country_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aa1Id": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "aa1_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aa2Id": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "aa2_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aa3Id": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "aa3_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "localityId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "locality_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "subLocalityId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "sub_locality_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "streetId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "street_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "zipId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "zip_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "source": {
+      "type": "belongsTo",
+      "model": "GPSSource",
+      "foreignKey": "gpsSourceId",
+      "postgresql": {
+        "columnName": "gps_source_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "continent": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "continentId",
+      "postgresql": {
+        "columnName": "continent_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "country": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "countryId",
+      "postgresql": {
+        "columnName": "country_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aa1": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "aa1Id",
+      "postgresql": {
+        "columnName": "aa1_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aa2": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "aa2Id",
+      "postgresql": {
+        "columnName": "aa2_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aa3": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "aa3Id",
+      "postgresql": {
+        "columnName": "aa3_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "locality": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "localityId",
+      "postgresql": {
+        "columnName": "locality_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "subLocality": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "subLocalityId",
+      "postgresql": {
+        "columnName": "sub_locality_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "street": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "streetId",
+      "postgresql": {
+        "columnName": "street_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "zip": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "zipId",
+      "postgresql": {
+        "columnName": "zip_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

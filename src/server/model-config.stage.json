@@ -1,0 +1,205 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BaseModel": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Cron": {
+    "dataSource": "db",
+    "public": true
+  },
+
+  "ApiKey": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "UserRole": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "OrganizationRole": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "TrashPoint": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "TrashPointActivity": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "TrashPointSize": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "TrashPointType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "GPSSource": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "TrashPointActivityHasImage": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "TrashPointActivityHasTrashPointType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "User": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "Spam": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "Area": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "AreaManager": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "Image": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "GPS": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "AccessibilityType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "TrashPointActivityHasAccessibilityType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "Organization": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "OrganizationHasArea": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "Badge": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "UserHasBadge": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "UserHasOrganization": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "UserHasEvent": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "UserHasArea": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "UserAreaRole": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "Event": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "EventHasImage": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "TrashPointHasEvent": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "PrContent": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "PrContentVideo": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "PrContentHasImage": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "CollectionPoint": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "CollectionPointActivity": {
+    "dataSource": "trashout",
+    "public": true
+  },
+  "CollectionPointSize": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "CollectionPointType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "CollectionPointHasEvent": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "CollectionPointActivityHasImage": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "CollectionPointActivityHasCollectionPointType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "CollectionPointSizeHasCollectionPointType": {
+    "dataSource": "trashout",
+    "public": false
+  },
+  "Device": {
+    "dataSource": "trashout",
+    "public": false
+  }
+}

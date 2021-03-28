@@ -1,0 +1,74 @@
+{
+  "name": "ApiKey",
+  "plural": "api-key",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "api_key"
+    }
+  },
+  "properties": {
+    "apiKey": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "api_key",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "limitPerHour": {
+      "type": "number",
+      "required": true,
+      "default": 50,
+      "postgresql": {
+        "columnName": "limit_per_hour",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["list", "createKey", "updateKey", "regenerateKey", "getInfo"]
+    }    
+  ],
+  "methods": {}
+}

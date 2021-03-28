@@ -1,0 +1,304 @@
+{
+  "name": "Event",
+  "plural": "Event",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "event"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "description",
+        "dataType": "text"
+      }
+    },
+    "duration": {
+      "type": "number",
+      "postgresql": {
+        "columnName": "duration_in_minute",
+        "dataType": "bigint"
+      }
+    },
+    "start": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "start",
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "startWithTimeZone": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "start_with_local_time_zone",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "bring": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "bring",
+        "dataType": "text"
+      }
+    },
+    "have": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "have",
+        "dataType": "text"
+      }
+    },
+    "childFriendly": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "child_friendly",
+        "dataType": "boolean"
+      }
+    },
+    "cleaningAreaUpperLeftGpsId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "cleaning_area_upper_left_gps_id",
+        "dataType": "bigint"
+      }
+    },
+    "cleaningAreaBottomRightGpsId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "cleaning_area_bottom_right_gps_id",
+        "dataType": "bigint"
+      }
+    },
+    "city": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "city",
+        "dataType": "text"
+      }
+    },
+    "street": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "street",
+        "dataType": "text"
+      }
+    },
+    "contactEmail": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_email",
+        "dataType": "text"
+      }
+    },
+    "contactPhone": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_phone",
+        "dataType": "text"
+      }
+    },
+    "contactName": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_name",
+        "dataType": "text"
+      }
+    },
+    "contactOccupation": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_occupation",
+        "dataType": "text"
+      }
+    },    
+    "gpsId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "gps_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "reviewed": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "_oldId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldId",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "gps": {
+      "type": "belongsTo",
+      "model": "GPS",
+      "foreignKey": "gpsId",
+      "postgresql": {
+        "columnName": "gps_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "cleaningAreaUpperLeft": {
+      "type": "belongsTo",
+      "model": "GPS",
+      "foreignKey": "cleaningAreaUpperLeftGpsId",
+      "postgresql": {
+        "columnName": "cleaning_area_upper_left_gps_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "cleaningAreaBottomRight": {
+      "type": "belongsTo",
+      "model": "GPS",
+      "foreignKey": "cleaningAreaBottomRightGpsId",
+      "postgresql": {
+        "columnName": "cleaning_area_bottom_right_gps_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "trashPoints": {
+      "type": "hasMany",
+      "model": "TrashPoint",
+      "foreignKey": "eventId",
+      "through": "TrashPointHasEvent",
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "users": {
+      "type": "hasMany",
+      "model": "User",
+      "foreignKey": "eventId",
+      "through": "UserHasEvent",
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "collectionPoints": {
+      "type": "hasMany",
+      "model": "CollectionPoint",
+      "foreignKey": "eventId",
+      "through": "CollectionPointHasEvent",
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "spam": {
+      "type": "hasMany",
+      "model": "Spam",
+      "foreignKey": "eventId",
+      "columnName": "event_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "EventHasImage",
+      "foreignKey": "eventId",
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["getEvent", "list", "listCount", "sendEmail"]
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["getEvent", "list", "listCount", "sendEmail", "createEvent", "updateEvent", "joinUsersToEvent", "updateUserInEvent", "deleteUserFromEvent", "getUsersInEvent", "getUsersInEventCount", "confirmUserInEvent", "feedback", "addImage", "deleteEvent"]
+    },   
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

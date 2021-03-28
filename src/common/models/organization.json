@@ -1,0 +1,239 @@
+{
+  "name": "Organization",
+  "plural": "Organization",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "organization"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "description",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "created",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    },
+    "mailBodyHtml": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "mail_body",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "mailBodyMarkdown": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "mail_body_markdown",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "mailSubject": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "mail_subject",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "contactEmail": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_email",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "contactPhone": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_phone",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "contactTwitter": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_twitter",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "contactFacebook": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_facebook",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "contactGooglePlus": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_google_plus",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "contactUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "contact_url",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "_oldId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldId",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "parentId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "parent_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "type",
+        "dataType": "organization_type",
+        "nullable": "NO"
+      }
+    },
+    "imageId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "areaId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "language": {
+      "type": "string",
+      "required": true,
+      "length": 5,
+      "postgresql": {
+        "columnName": "language",
+        "dataType": "char",
+        "dataLength": 5,
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "parentOrganization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "parentId",
+      "postgresql": {
+        "columnName": "parent_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "area": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "areaId",
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "image": {
+      "type": "belongsTo",
+      "model": "Image",
+      "foreignKey": "imageId",
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "organizationHasArea": {
+      "type": "hasMany",
+      "model": "OrganizationHasArea"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["list", "listCount", "detail", "listUsers", "listUsersCount", "activities", "stats"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["list", "listCount", "detail", "listUsers", "listUsersCount", "activities", "ins", "upd", "del", "removeUser", "addUser", "sendInvitations", "stats", "addArea", "updateArea", "removeArea"]
+    }
+  ],
+  "methods": {}
+}

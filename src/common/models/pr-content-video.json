@@ -1,0 +1,56 @@
+{
+  "name": "PrContentVideo",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "pr_content_video"
+    }
+  },
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "url",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": false,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "created",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    },
+    "prContentId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "pr_content_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "prContent": {
+      "type": "belongsTo",
+      "model": "PrContent",
+      "foreignKey": "prContentId",
+      "postgresql": {
+        "columnName": "pr_content_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

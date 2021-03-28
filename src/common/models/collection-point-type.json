@@ -1,0 +1,28 @@
+{
+  "name": "CollectionPointType",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "collection_point_type"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "activities": {
+      "type": "hasAndBelongsToMany",
+      "model": "CollectionPointActivity",
+      "foreignKey": "collectionPointActivityId",
+      "through": "CollectionPointActivityHasCollectionPointType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

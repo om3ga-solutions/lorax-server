@@ -1,0 +1,3559 @@
+FORMAT: 1A
+HOST: http://api.trashout.ngo/
+
+# TrashOut API
+
+TrashOut is an environmental project aiming to locate illegal dumps all around the world. We are developing a solution to take proper steps to illegal dumps.
+
+## Trash [/trash/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Trash in the form of an integer
+
+### Get an Existing Trash [GET]
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "activityId": 5,
+                "images":  [
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 4
+                    },
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 5
+                    },
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 6
+                    }
+                ],
+                "gps": {
+                    "lat": 50.0783444,
+                    "long": 14.4300492,
+                    "accuracy": 5,
+                    "source": "wifi",
+                    "area": {
+                        "continent": "Europe",
+                        "country": "Czech Republic",
+                        "aa1": "Středočeský kraj",
+                        "aa2": "",
+                        "aa3": "",
+                        "locality": "Praha",
+                        "subLocality": "Praha 1",
+                        "street": "Vodičkova",
+                        "zip": 22
+                    }
+                },
+                "size": "bag",
+                "types": [
+                    "automotive",
+                    "liquid",
+                    "dangerous"
+                ],
+                "note": "Lorem ipsum",
+                "userInfo": {
+                    "id": 6,
+                    "firstName": "Brambor",
+                    "lastName": "Vomáčka"
+                },
+                "anonymous": false,
+                "accessibility": {
+                    "byCar": true,
+                    "inCave": false,
+                    "underWater": false,
+                    "notForGeneralCleanup": false
+                },
+                "status": "stillHere",
+                "cleanedByMe": false,
+                "created": "2016-01-12T07:38:33.000Z",
+                "updateTime": "2016-10-12T07:38:33.000Z",
+                "updateHistory": [
+                    {
+                        "activityId": 3,
+                        "userInfo": {
+                            "userId": 2,
+                            "firstName": "John",
+                            "lastName": "Doe"
+                        },
+                        "updateTime": "2016-10-12T07:38:33.000Z",
+                        "changed": {
+                            "images": [
+                                {
+                                    "created": "2016-11-23T14:01:15.237Z",
+                                    "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                                    "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                                    "thumbDownloadUrl": null,
+                                    "thumbStorageLocation": null,
+                                    "thumbRetinaStorageLocation": null,
+                                    "thumbRetinaDownloadUrl": null,
+                                    "id": 3
+                                }
+                            ],
+                            "types": [
+                                "liquid",
+                                "plastic"
+                            ],
+                            "status": "more",
+                            "note": "Lorem ipsum"
+                        }
+                    },
+                    {
+                        "activityId": 4,
+                        "userInfo": {
+                            "userId": 2,
+                            "firstName": "John",
+                            "lastName": "Doe"
+                        },
+                        "updateTime": "2016-04-12T08:38:33.000Z",
+                        "changed": {
+                            "types": [
+                            "liquid",
+                            "plastic"
+                            ],
+                            "status": "more"
+                        }
+                    }
+                ],
+                "url": "https://www.trashout.ngo/illegal-trash/4606923655610368",
+                "events": [
+                    {
+                        "id": 1,
+                        "name": "Jarní sběr",
+                        "gps": {
+                            "lat": 50.123456,
+                            "long": 14.123456,
+                            "accuracy": 50,
+                            "source": "wifi",
+                            "area": {
+                                "continent": "Europe",
+                                "country": "Czech Republic",
+                                "aa1": "Středočeský kraj",
+                                "aa2": null,
+                                "aa3": null,
+                                "locality": "Praha",
+                                "subLocality": "Praha 2",
+                                "street": null,
+                                "zip": null
+                            }
+                        },
+                        "description": "Lorem ipsum",
+                        "start": "2017-05-15T08:00:00.000Z",
+                        "duration": 120
+                    }
+                ],
+                comments: [
+                    {
+                        "created": "2020-04-30T19:47:53.697Z",
+                        "userId": 25374,
+                        "organizationId": null,
+                        "trashPointId": 1,
+                        "body": "This is another Trash comment",
+                        "id": 4
+                    },
+                    {
+                        "created": "2020-04-30T14:52:29.639Z",
+                        "userId": 25374,
+                        "organizationId": null,
+                        "trashPointId": 1,
+                        "body": "This is an Trash comment",
+                        "id": 3
+                    }
+                ]
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "todo":"todo"
+            }
+
++ Response 403
+
++ Response 500
+
+### Update an Existing Trash [PUT]
+
++ Attributes
+
+    + images (array, required) - Array of images
+    + gps (object, required) - GPS with lat, long, accuracy and source ("wifi"|"network"|"gps")
+    + size (string, required) - Size of the trash
+    + types (array, required) - Types of the trash
+    + note (string, optional) - Description of trash
+    + anonymous (boolean, optional) - Whether the trash is reported anonymously
+    + accessibility (number, required) - Trash accessibility
+    + status (string, required) - Trash status ("stillHere"|"less"|"more"|"cleaned")
+    + cleanedByMe (boolean, optional) - Whether is trash cleaned by me (use only in combination with status "cleaned")
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+            {
+                "images": [
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "1c",
+                        "thumbStorageLocation": "1d",
+                        "thumbRetinaStorageLocation": "1e",
+                        "thumbRetinaDownloadUrl": "1f"
+                    },
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "2c",
+                        "thumbStorageLocation": "2d",
+                        "thumbRetinaStorageLocation": "2e",
+                        "thumbRetinaDownloadUrl": "2f"
+                    }
+                ],
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 44,
+                    "source": "network"
+                },
+                "size": "bag",
+                "types": [
+                    "plastic",
+                    "domestic",
+                    "automotive",
+                    "liquid",
+                    "dangerous"
+                ],
+                "note": "Lorem ipsum",
+                "anonymous": true,
+                "status": "less",
+                "cleanedByMe": false,
+                "accessibility": {
+                    "byCar": false,
+                    "inCave": true,
+                    "underWater": false,
+                    "notForGeneralCleanup": false
+                }
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "activityId": 10,
+                "statusCode": 200
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Delete an Existing Trash [DELETE]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Trash Collection [/trash/{?area,geocells,geoAreaStreet,geoAreaZip,geoAreaCity,geoAreaAa3,geoAreaAa2,geoAreaAa1,geoAreaCountry,geoAreaContinent,spam,unreviewed,timeBoundaryFrom,timeBoundaryTo,trashStatus,trashSize,trashType,trashAccessibility,trashNote,trashIds,userIds,attributesNeeded,orderBy,userPosition,page,limit}]
+
+### Get Trash List [GET]
+
++ Parameters
+    + area (optional, string) - Comma separated latitude and longitude of top left corner and bottom right corner. Example: 54.123456,53.123456,56.123456,34.123456
+    + geocells (optional, string) - Comma separated geocells
+    + geoAreaStreet (optional, string) - Street
+    + geoAreaZip (optional, string) - Zip
+    + geoAreaCity (optional,string) - City
+    + geoAreaAa3 (optional, string)- Administrative area 3
+    + geoAreaAa2 (optional, string) - Administrative area 2
+    + geoAreaAa1 (optional, string) - Administrative area 1
+    + geoAreaCountry (optional, string) - Country
+    + geoAreaContinent (optional, string) - Continent
+    + spam (optional, boolean) - Whether one (or more) of trash activities are marked as spam
+    + unreviewed (optional, boolean) - Whether trash (first activity) is marked as unreviewed
+    + timeBoundaryFrom (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z"
+    + timeBoundaryTo (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z" - required when timeBoundaryFrom is set
+    + trashStatus (optional, string) - Comma separated states - "stillHere", "less", "more", "cleaned"
+    + trashSize (optional, string) - Comma separated sizes - car, bag, wheelbarrow
+    + trashType (optional, string) - Comma separated types - plastic, domestic, automotive, liquid, dangerous, metal, electronic, deadAnimals, organic, construction
+    + trashAccessibility (optional, string) - Comma separated accesibility types with prefix "-" for negative filter (e.g. trashAccessibility=byCar,-inCave) - "byCar", "inCave", "underWater", "notForGeneralCleanup"
+    + trashNote (optional, string) - Text
+    + trashIds (optional, string) - Comma separated trash identifiers
+    + userIds (optional, string) - Comma separated user identifiers (users who created report or made actualization)
+    + organizationId (optional, integer) - Organization ID
+    + attributesNeeded (required, string) - Comma separated attributes which will be contained in the result. Attributes are "id", "gpsShort", "gpsFull", "types", "size", "note", "userInfo", "anonymous", "status", "cleanedByMe", "images", "updateTime", "updateHistory", "url", "created", "accessibility", "updateNeeded", "unreviewed", "spam"
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order - "gps", "id", "anonymous", "created", "note", "reviewed", "status", "size"
+    + userPosition (optional, string) - Comma separated latitude and longitude of current user position. Required when attribute "orderBy=gps" is used.
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "activityId": 5,
+                "gps": {
+                    "lat": 49.8341924,
+                    "long": 13.8956998,
+                    "accuracy": 5,
+                    "source": "gps",
+                    "area": {
+                        "continent": "Europe",
+                        "country": "Czech Republic",
+                        "aa1": "Středočeský kraj",
+                        "aa2": "",
+                        "aa3": "",
+                        "locality": "Praha",
+                        "subLocality": "Praha 1",
+                        "street": "Vodičkova",
+                        "zip": 22
+                    }
+                },
+                "types": [
+                    "liquid",
+                    "plastic"
+                ],
+                "size": "car",
+                "note": "updated Lorem ipsum",
+                "status": "less",
+                "cleanedByMe": false,
+                "userInfo": {
+                    "id": 5,
+                    "firstName": "Láďa",
+                    "lastName": "Hruška"
+                },
+                "images": [
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": "03-01-updated.jpg",
+                        "id": 4
+                    }
+                ],
+                "created": "2016-01-12T07:38:33.000Z",
+                "updateTime": "2016-03-12T07:38:33.000Z",
+                "updateHistory": [
+                    {
+                        "activityId": 1,
+                        "userInfo": {
+                            "userId": 2,
+                            "firstName": "John",
+                            "lastName": "Doe"
+                        },
+                        "updateTime": "2016-01-12T07:38:33.000Z",
+                        "changed": {
+                            "images": [
+                                {
+                                    "created": "2016-11-23T14:01:15.237Z",
+                                    "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                                    "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                                    "thumbDownloadUrl": null,
+                                    "thumbStorageLocation": null,
+                                    "thumbRetinaStorageLocation": null,
+                                    "thumbRetinaDownloadUrl": "01-01-created.jpg",
+                                    "id": 4
+                                }
+                            ],
+                            "status": "stillHere"
+                        }
+                    },
+                    {
+                        "activityId": 4,
+                        "userInfo": {
+                            "userId": 2,
+                            "firstName": "John",
+                            "lastName": "Doe"
+                        },
+                        "updateTime": "2016-02-12T08:38:33.000Z",
+                        "changed": {
+                            "images": [
+                               {
+                                    "created": "2016-11-23T14:01:15.237Z",
+                                    "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                                    "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                                    "thumbDownloadUrl": null,
+                                    "thumbStorageLocation": null,
+                                    "thumbRetinaStorageLocation": null,
+                                    "thumbRetinaDownloadUrl": "02-01-created.jpg",
+                                    "id": 4
+                                }
+                            ],
+                            "types": [
+                                "liquid",
+                                "plastic"
+                            ],
+                            "status": "more",
+                            "note": "Lorem ipsum"
+                        }
+                    }
+                ],
+                "url": "https://www.trashout.ngo/illegal-trash/4606923655610368",
+                "updateNeeded": false
+            },
+            {
+                "id": 2,
+                "gps": {
+                    "lat": 57.123456,
+                    "long": 36.123456,
+                    "accuracy": 2,
+                    "source": "wifi",
+                    "area": {
+                        "continent": "Europe",
+                        "country": "Czech Republic",
+                        "aa1": "Středočeský kraj",
+                        "aa2": "",
+                        "aa3": "",
+                        "locality": "Praha",
+                        "subLocality": "Praha 1",
+                        "street": "Vodičkova",
+                        "zip": 22
+                    }
+                },
+                "types": [
+                    "domestic"
+                ],
+                "size": "bag",
+                "note": "Lorem ipsum",
+                "status": "less",
+                "cleanedByMe": false,
+                "userInfo": {
+                    "id": 5,
+                    "firstName": "Láďa",
+                    "lastName": "Hruška"
+                },
+                "images": [
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/04-01-created.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F04-01-created.jpg?alt=media&token=5d3f9378-f6f8-4bc1-8cd1-c8a5b5a05af6",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": "02-01-created.jpg",
+                        "id": 4
+                    }
+                ],
+                "created": "2015-01-12T07:38:33.000Z",
+                "updateTime": null,
+                "updateHistory": [],
+                "url": "https://www.trashout.ngo/illegal-trash/4606923655610368",
+                "updateNeeded": false
+            }
+        ]
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Create a New Trash [POST]
+
++ Attributes
+
+    + images (array, required) - Array of images
+    + gps (object, required) - GPS with lat, long, accuracy and source ("wifi"|"network"|"gps")
+    + size (string, required) - Size of the trash
+    + types (array, required) - Types of the trash
+    + note (string, optional) - Description of trash
+    + anonymous (boolean, optional) - Whether the trash is reported anonymously
+    + accessibility (number, required) - Trash accessibility
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+            {
+                "images": [
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "1c",
+                        "thumbStorageLocation": "1d",
+                        "thumbRetinaStorageLocation": "1e",
+                        "thumbRetinaDownloadUrl": "1f"
+                    },
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "2c",
+                        "thumbStorageLocation": "2d",
+                        "thumbRetinaStorageLocation": "2e",
+                        "thumbRetinaDownloadUrl": "2f"
+                    }
+                ],
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 50,
+                    "source": "wifi"
+                },
+                "size": "bag",
+                "types": [
+                    "plastic",
+                    "domestic",
+                    "automotive",
+                    "liquid",
+                    "dangerous"
+                ],
+                "note": "Lorem ipsum",
+                "anonymous": true,
+                "accessibility": {
+                    "byCar": true,
+                    "inCave": true,
+                    "underWater": false,
+                    "notForGeneralCleanup": false
+                }
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "activityId": 6,
+                "statusCode": 200
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
++ Response 500
+
+## Trash List Count [/trash/count/{?area,geocells,geoAreaStreet,geoAreaZip,geoAreaCity,geoAreaAa3,geoAreaAa2,geoAreaAa1,geoAreaCountry,geoAreaContinent,spam,unreviewed,timeBoundaryFrom,timeBoundaryTo,trashStatus,trashSize,trashType,trashAccessibility,trashNote,trashIds,userIds}]
+
+### Get Trash List Count [GET]
+
++ Parameters
+    + area (optional, string) - Comma separated latitude and longitude of top left corner and bottom right corner. Example: 54.123456,53.123456,56.123456,34.123456
+    + geocells (optional, string) - Comma separated geocells
+    + geoAreaStreet (optional, string) - Street
+    + geoAreaZip (optional, string) - Zip
+    + geoAreaCity (optional, string) - City
+    + geoAreaAa3 (optional, string)- Administrative area 3
+    + geoAreaAa2 (optional, string) - Administrative area 2
+    + geoAreaAa1 (optional, string) - Administrative area 1
+    + geoAreaCountry (optional, string) - Country
+    + geoAreaContinent (optional, string) - Continent
+    + spam (optional, boolean) - Whether one (or more) of trash activities are marked as spam
+    + unreviewed (optional, boolean) - Whether trash (first activity) is marked as unreviewed
+    + timeBoundaryFrom (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z"
+    + timeBoundaryTo (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z" - required when timeBoundaryFrom is set
+    + trashStatus (optional, string) - Comma separated states - stillHere, less, more, cleaned
+    + trashSize (optional, string) - Comma separated sizes - car, bag, wheelbarrow
+    + trashType (optional, string) - Comma separated types - plastic, domestic, automotive, liquid, dangerous, metal, electronic, deadAnimals, organic, construction
+    + trashAccessibility (optional, string) - Comma separated accesibility types with prefix "-" for negative filter (e.g. trashAccessibility=byCar,-inCave) - "byCar", "inCave", "underWater", "notForGeneralCleanup"
+    + trashNote (optional, string) - Text
+    + trashIds (optional, string) - Comma separated trash identifiers
+    + userIds (optional, string) - Comma separated user identifiers (users who created report or made actualization)
+    + organizationId (optional, integer) - Organization ID
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "count": 666
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Trash List ZoomPoint [/trash/zoom-point/{?zoomLevel,geocells,area,spam,unreviewed,timeBoundaryFrom,timeBoundaryTo,trashStatus,trashSize,trashType,trashAccessibility,trashNote,trashIds,userIds}]
+
+### Get Trash ZoomPoint [GET]
+
++ Parameters
+
+    + zoomLevel (integer) - Zoom level
+    + geocells (string) - Comma separated geocells
+    + spam (optional, boolean) - Whether one (or more) of trash activities are marked as spam
+    + unreviewed (optional, boolean) - Whether trash (first activity) is marked as unreviewed
+    + timeBoundaryFrom (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z"
+    + timeBoundaryTo (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z" - required when timeBoundaryFrom is set
+    + trashStatus (optional, string) - Comma separated states - stillHere, less, more, cleaned
+    + trashSize (optional, string) - Comma separated sizes - car, bag, wheelbarrow
+    + trashType (optional, string) - Comma separated types - plastic, domestic, automotive, liquid, dangerous, metal, electronic, deadAnimals, organic, construction
+    + trashAccessibility (optional, string) - Comma separated accesibility types with prefix "-" for negative filter (e.g. trashAccessibility=byCar,-inCave) - "byCar", "inCave", "underWater", "notForGeneralCleanup"
+    + trashNote (optional, string) - Text
+    + trashIds (optional, string) - Comma separated trash identifiers
+    + userIds (optional, string) - Comma separated user identifiers (users who created report or made actualization)
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "geocell" : "e06b4",
+                    "lat": 50.07603454589844,
+                    "long": 13.69558525085449,
+                    "counts": {
+                        "stillHere" : 5,
+                        "cleaned" : 10,
+                        "less": 0,
+                        "more": 0
+                    }
+                },
+                {
+                    "geocell" : "e06b5",
+                    "lat": 50.07603454589844,
+                    "long": 13.69558525085449,
+                    "counts": {
+                        "stillHere" : 5,
+                        "cleaned" : 10,
+                        "less": 0,
+                        "more": 0
+                    }
+                },
+                {
+                    "geocell" : "e06b6",
+                    "lat": 50.07603454589844,
+                    "long": 13.69558525085449,
+                    "counts": {
+                        "stillHere" : 5,
+                        "cleaned" : 10,
+                        "less": 0,
+                        "more": 0
+                    }
+                }
+            ]
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Trash Activity [/trash/activity/{id}]
+
+### Delete a Trash Activity [DELETE]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Trash Activity Images [/trash/activity/{id}/images/{imageId}]
+
+### Delete an Image From Trash Activity [DELETE]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Trash Comment [/trash/{id}/comment/{commentId}]
+
++ Parameters
+
+    + id (number) - ID of the Trash in the form of an integer
+    + commentId (number) - ID of the Comment in the form of an integer
+
+### Get Trash Comment detail [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 200 (application/json)
+
+    + Body
+
+        {
+            "created": "2020-04-30T14:52:29.639Z",
+            "userId": 25374,
+            "organizationId": null,
+            "trashPointId": 50899,
+            "body": "This is an Trash comment.",
+            "id": 3,
+            "canIDelete": false,
+            "user": {
+                "firstName": "Jan",
+                "lastName": "Novak",
+                "email": "jan@novak.com",
+                "info": null,
+                "birthdate": null,
+                "created": "2020-04-30T03:42:56.097Z",
+                "active": false,
+                "newsletter": false,
+                "imageId": null,
+                "uid": "NZAIbmM2ssVo4s1fN42sDo0AG6b2",
+                "facebookUID": null,
+                "facebookUrl": null,
+                "twitterUrl": null,
+                "googlePlusUrl": null,
+                "phoneNumber": null,
+                "points": "0",
+                "reviewed": null,
+                "eventOrganizer": false,
+                "volunteerCleanup": false,
+                "userRoleId": "3",
+                "language": "sk_SK",
+                "id": 25374
+            }
+        }
+
++ Response 404
+
+### Delete an Comment from Trash [DELETE]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
+## Trash Comment Collection [/trash/{id}/comment]
+
++ Parameters
+
+    + id (number) - ID of the Trash in the form of an integer
+
+### Get Trash Comment List (sorted from newest to oldest) [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 200 (application/json)
+
+    + Body
+
+        [
+            {
+                "created": "2020-04-30T19:47:53.697Z",
+                "userId": 25374,
+                "organizationId": null,
+                "trashPointId": 50899,
+                "body": "This is another Trash comment",
+                "id": 4,
+                "canIDelete": true,
+                "user": {
+                   "firstName": "Jan",
+                   "lastName": "Novak",
+                   "email": "jan@novak.com",
+                   "info": null,
+                   "birthdate": null,
+                   "created": "2020-04-30T03:42:56.097Z",
+                   "active": false,
+                   "newsletter": false,
+                   "imageId": null,
+                   "uid": "NZAIbmM2ssVo4s1fN42sDo0AG6b2",
+                   "facebookUID": null,
+                   "facebookUrl": null,
+                   "twitterUrl": null,
+                   "googlePlusUrl": null,
+                   "phoneNumber": null,
+                   "points": "0",
+                   "reviewed": null,
+                   "eventOrganizer": false,
+                   "volunteerCleanup": false,
+                   "userRoleId": "3",
+                   "language": "sk_SK",
+                   "id": 25374
+                }
+            },
+            {
+                "created": "2020-04-30T14:52:29.639Z",
+                "userId": 25374,
+                "organizationId": null,
+                "trashPointId": 50899,
+                "body": "This is an Trash comment",
+                "id": 3,
+                "canIDelete": true,
+                "user": {
+                  "firstName": "Jan",
+                  "lastName": "Novak",
+                  "email": "jan@novak.com",
+                  "info": null,
+                  "birthdate": null,
+                  "created": "2020-04-30T03:42:56.097Z",
+                  "active": false,
+                  "newsletter": false,
+                  "imageId": null,
+                  "uid": "NZAIbmM2ssVo4s1fN42sDo0AG6b2",
+                  "facebookUID": null,
+                  "facebookUrl": null,
+                  "twitterUrl": null,
+                  "googlePlusUrl": null,
+                  "phoneNumber": null,
+                  "points": "0",
+                  "reviewed": null,
+                  "eventOrganizer": false,
+                  "volunteerCleanup": false,
+                  "userRoleId": "3",
+                  "language": "sk_SK",
+                  "id": 25374
+                }
+            }
+        ]
+
+### Create a New Trash Comment [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+        {
+            "body": "next comment 7",
+            "organizationId": 3
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+        {
+            "created": "$now",
+            "userId": null,
+            "organizationId": 3,
+            "trashPointId": 50899,
+            "body": "next comment 11",
+            "id": 16
+        }
+
+## User [/user/{id}]
+
+### Find a user [GET]
+
++ Parameters
+
+    + id (number) - ID of the user in the form of an integer
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "firstName": "Jim",
+                "lastName": "Raynor",
+                "email": "jim.raynor@sonsofkorhal.com",
+                "info": "Jim Raynor's description goes here.",
+                "birthdate": "2012-04-20T22:00:00.000Z",
+                "created": "2016-11-22T12:57:55.259Z",
+                "active": true,
+                "newsletter": true,
+                "image": {
+                    "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                    "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                    "thumbDownloadUrl": null,
+                    "thumbStorageLocation": null,
+                    "thumbRetinaStorageLocation": null,
+                    "thumbRetinaDownloadUrl": null,
+                    "id": 4
+                },
+                "uid": "JNgNzUH3XdNnmi0IlMbNzR3SMm93",
+                "tokenFCM": "asdfxcvb9876",
+                "facebookUrl": "",
+                "twitterUrl": "",
+                "googlePlusUrl": "",
+                "phoneNumber": "+420123456789",
+                "points": 9000,
+                "reviewed": false,
+                "id": 1,
+                "userRoleId": 1,
+                "areaId": null,
+                "stats": {
+                    "id": 16,
+                    "reported": 12,
+                    "updated": 8,
+                    "cleaned": 2
+                }
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+### Update the user [PUT]
+
++ Attributes
+
+    + firstName (string, optional) - First name
+    + lastName (string, optional) - Last name
+    + email (string, optional) - Email address
+    + info (string, optional) - User info
+    + birthdate (string, optional) - Timestamp
+    + created (string, optional) - Timestamp
+    + active (boolean, optional) - Whether is user active
+    + newsletter (boolean, optional) - Whether user confirmed newsletter
+    + image (object, optional) - Image object containing at least two properties "fullStorageLocation" and "fullDownloadUrl"
+    + uid (string, required) - Firebase uid
+    + tokenFCM (string, optional) - Token
+    + facebookUrl (string, optional) - Facebook URL
+    + twitterUrl (string, optional) - Twitter URL
+    + googlePlusUrl (string, optional) - Google+ Url
+    + phoneNumber (string, optional) - Phone number
+    + points (number, optional) - Points
+    + reviewed (boolean, optional) - Whether is user reviewed
+    + userRoleId (number, optional) - User role identifier. Only admin can update this property.
+    + areaId (number, optional) - Area identifier
+
++ Request (application/json)
+
+        {
+            "firstName": "Jim",
+            "lastName": "Raynor",
+            "email": "jim.raynor@sonsofkorhal.com",
+            "info": "Jim Raynor's description goes here.",
+            "birthdate": "2012-04-20T22:00:00.000Z",
+            "created": "2016-11-22T12:57:55.259Z",
+            "active": true,
+            "newsletter": true,
+            "uid": "JNgNzUH3XdNnmi0IlMbNzR3SMm93",
+            "tokenFCM": "asdfxcvb9876",
+            "facebookUrl": "",
+            "twitterUrl": "",
+            "googlePlusUrl": "",
+            "phoneNumber": "+420123456789",
+            "points": 9000,
+            "reviewed": false,
+            "eventOrganizer": true,
+            "userRoleId": 1,
+            "areaId": null,
+            "imageId": 6,
+            "userHasBadge": [
+                {
+                    "badgeId": "1"
+                },
+                {
+                    "badgeId": "3"
+                }
+            ],
+            "userHasOrganization": [
+                {
+                    "organizationId": "2",
+                    "organizationRoleId": "1"
+                }
+            ],
+            "image": {
+                "id": 16,
+                "fullStorageLocation": "string",
+                "fullDownloadUrl": "http://example.com/img1234",
+                "thumbDownloadUrl": "http://example.com/th_img1234",
+                "thumbStorageLocation": "string",
+                "thumbRetinaStorageLocation": "string",
+                "thumbRetinaDownloadUrl": "http://example.com/th_r_img1234"
+            }
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "statusCode": 200
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+### Delete a user [DELETE]
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 2
+            }
+
+## Deactivate user [/user/disableUser/{id}]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": true
+            }
+
+## Actual user - identified by a token [/user/me/]
+
+### Find a user by token in http header [GET]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: 1a2b3c4d ## Logged user's Firebase token
+
++ Response 200 (application/json)
+
+    + Body
+
+            2 # userId
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "error": {
+                    "status": 403,
+                    "message": "An unknown error occurred",
+                    "error": "Some message",
+                    "fbData": {}
+                }
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "error": {
+                    "status": 404,
+                    "message": "An unknown error occurred",
+                    "error": "Firebase identity not found.",
+                    "fbData": {}
+                }
+            }
+
+## Invite Users to Organization by e-mail [/organization/{id}/sendInvitations]
+
+### Send e-mail invites [POST]
+
++ Request (application/json)
+
+        {
+            "id": 2,
+            "emails": [
+                "jan.maly@gmail.com",
+                "fero.chory@asdf.sk"
+            ]
+        }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                 "success": true,
+                 "messagesSent": 2
+            }
+
+## Add User to Organization [/user/joinOrganization/{id}]
+
++ Parameters
+
+    + id (number, required) - Organization identifier
+
+### Add User to Organization [POST]
+
++ Attributes
+
+    + organizationRoleId (number, optional) - Organization role identifier
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: 1a2b3c4d ## Logged user's Firebase token
+
+    + Body
+
+            {
+                "organizationRoleId": 1
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "success": true
+            }
+
+## User Activity [/user/{id}/activity]
+
+### User Activity [GET]
+
++ Parameters
+
+    + id (number) - ID of the user in the form of an integer
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "type": "trashPoint",
+                    "action": "activity",
+                    "id": "31506",
+                    "created": "2016-12-23T10:31:46.406Z",
+                    "userInfo": {
+                        "id": "33966",
+                        "firstName": "Miroslav",
+                        "lastName": "Poživil"
+                    },
+                    "gps": {
+                        "lat": 50.2149237,
+                        "long": 15.7497604,
+                        "accuracy": 65,
+                        "source": "wifi"
+                    },
+                    "activity": {
+                        "id": 36966,
+                        "images": [
+                            {
+                                "id": 62226,
+                                "created": "2016-12-23T10:31:46.406013",
+                                "fullDownloadUrl": "image",
+                                "thumbDownloadUrl": null,
+                                "fullStorageLocation": null,
+                                "thumbRetinaDownloadUrl": null,
+                                "thumbRetinaStorageLocation": null
+                            }
+                        ],
+                        "note": "running tests",
+                        "status": "stillHere",
+                        "cleanedByMe": false,
+                        "anonymous": false
+                    }
+                },
+                {
+                    "type": "event",
+                    "action": "join",
+                    "id": "140",
+                    "created": "2016-12-22T10:32:24.492Z",
+                    "userInfo": {
+                        "id": "33966",
+                        "firstName": "Miroslav",
+                        "lastName": "Poživil"
+                    },
+                    "gps": {
+                        "lat": 50.2149237,
+                        "long": 15.7497604,
+                        "accuracy": 65,
+                        "source": "wifi"
+                    }
+                },
+                {
+                    "type": "event",
+                    "action": "create",
+                    "id": "139",
+                    "created": "2016-12-22T10:32:24.492Z",
+                    "userInfo": {
+                        "id": "33966",
+                        "firstName": "Miroslav",
+                        "lastName": "Poživil"
+                    },
+                    "gps": {
+                        "lat": 50.2149237,
+                        "long": 15.7497604,
+                        "accuracy": 65,
+                        "source": "wifi"
+                    }
+                }
+            ]
+
+## User Collection [/user{?emails,userIds,minPoints,maxPoints,areaIds,organizationIds,includeInCleanup,reviewed,orderBy,page,limit}]
+
+### List All Users [GET]
+
++ Parameters
+    + emails (string) - Comma separated emails
+    + userIds (string) - Comma separated user identifiers
+    + minPoints (number) - minimum points count
+    + maxPoints (number) - maximum points count
+    + areaIds (string) - Comma separated Area identifiers
+    + organizationIds (string) - Comma separated organization identifiers
+    + includeInCleanup (boolean) - wants to be included in a cleanup
+    + reviewed (optional, boolean) - Wheter users must be reviewed
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order (id, created, reviewed, email, fistName, lastName)
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 3,
+                "firstName": "Jim",
+                "lastName": "Raynor",
+                "email": "jim.raynor@sonsofkorhal.com",
+                "info": "Jim Raynor's description goes here.",
+                "birthdate": "2012-04-20T22:00:00.000Z",
+                "created": "2016-11-22T12:57:55.259Z",
+                "active": true,
+                "newsletter": true,
+                "image": {
+                    "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                    "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                    "thumbDownloadUrl": null,
+                    "thumbStorageLocation": null,
+                    "thumbRetinaStorageLocation": null,
+                    "thumbRetinaDownloadUrl": null,
+                    "id": 4
+                },
+                "uid": "JNgNzUH3XdNnmi0IlMbNzR3SMm93",
+                "tokenFCM": "asdfxcvb9876",
+                "facebookUrl": "",
+                "twitterUrl": "",
+                "googlePlusUrl": "",
+                "phoneNumber": "+420123456789",
+                "points": 9000,
+                "reviewed": false,
+                "event_organizer": false,
+                "userRoleId": 1,
+                "areaId": null,
+                "badges": [
+                    {
+                        "name": "Newbie",
+                        "localityId": null,
+                        "created": "2016-12-04T11:32:52.063Z",
+                        "points": 10,
+                        "id": 1
+                    }
+                ],
+                "organizations": [
+                    {
+                        "name": "Děti Země",
+                        "description": null,
+                        "created": "2016-12-04T11:32:52.136Z",
+                        "mailBody": "Mail contents",
+                        "mailSubject": "Test subject 2",
+                        "contactEmail": null,
+                        "contactPhone": null,
+                        "contactTwitter": null,
+                        "contactUrl": null,
+                        "_oldId": null,
+                        "parentId": null,
+                        "type": "other",
+                        "imageId": null,
+                        "gpsId": "2",
+                        "id": 2
+                    }
+                ]
+            }
+        ]
+
+### Create a New User [POST]
+
++ Attributes
+
+    + firstName (string, optional) - First name
+    + lastName (string, optional) - Last name
+    + email (string, optional) - Email address
+    + info (string, optional) - User info
+    + birthdate (string, optional) - Timestamp
+    + created (string, optional) - Timestamp
+    + active (boolean, optional) - Whether is user active
+    + newsletter (boolean, optional) - Whether user confirmed newsletter
+    + image (object, optional) - Image object containing at least two properties "fullStorageLocation" and "fullDownloadUrl"
+    + uid (string, required) - Firebase uid
+    + tokenFCM (string, optional) - Token
+    + facebookUrl (string, optional) - Facebook URL
+    + twitterUrl (string, optional) - Twitter URL
+    + googlePlusUrl (string, optional) - Google+ Url
+    + phoneNumber (string, optional) - Phone number
+    + points (number, optional) - Points
+    + reviewed (boolean, optional) - Whether is user reviewed
+    + areaId (number, optional) - Area identifier
+
++ Request (application/json)
+
+        {
+            "firstName": "Jim",
+            "lastName": "Raynor",
+            "email": "jim.raynor@sonsofkorhal.com",
+            "info": "Jim Raynor's description goes here.",
+            "birthdate": "2012-04-20T22:00:00.000Z",
+            "created": "2016-11-22T12:57:55.259Z",
+            "active": true,
+            "newsletter": true,
+            "image": {
+                "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265"
+            },
+            "uid": "JNgNzUH3XdNnmi0IlMbNzR3SMm93",
+            "tokenFCM": "asdfxcvb9876",
+            "facebookUrl": "",
+            "twitterUrl": "",
+            "googlePlusUrl": "",
+            "phoneNumber": "+420123456789",
+            "points": 9000,
+            "reviewed": false,
+            "areaId": null
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 16,
+                "firstName": "Jim",
+                "lastName": "Raynor",
+                "email": "jim.raynor@sonsofkorhal.com",
+                "info": "Jim Raynor's description goes here.",
+                "birthdate": "2012-04-20T22:00:00.000Z",
+                "created": "2016-11-22T12:57:55.259Z",
+                "active": true,
+                "newsletter": true,
+                "uid": "JNgNzUH3XdNnmi0IlMbNzR3SMm93",
+                "tokenFCM": "asdfxcvb9876",
+                "facebookUrl": "",
+                "twitterUrl": "",
+                "googlePlusUrl": "",
+                "phoneNumber": "+420123456789",
+                "points": 9000,
+                "reviewed": false,
+                "userRoleId": 1,
+                "areaId": null
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## User stats [/user/stats/{id}]
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 16,
+                "reported": 12,
+                "updated": 8,
+                "cleaned": 2
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## User List Count [/user/count{?id,minPoints,maxPoints,areaId,includeInCleanup}]
+
++ Parameters
+
+    + id (number | array) - ID of the user in the form of an integer - can be an array
+    + minPoints (number) - minimum points count
+    + maxPoints (number) - maximum points count
+    + areaId (number) - registered geographic area
+    + includeInCleanup (boolean) - wants to be included in a cleanup
+
+### User count [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "count": 6860
+            }
+        ]
+
+## List unreviewed users with any activity [/unreviewedWithActivity{?limit,page,sort}]
+
++ Parameters
+
+    + limit (number, optional)
+    + page (number, optional)
+    + sort (string, optional)
+
+### List [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 16,
+                    "firstName": "Jim",
+                    "lastName": "Raynor",
+                    "email": "jim.raynor@sonsofkorhal.com",
+                    "info": "Jim Raynor's description goes here.",
+                    "birthdate": "2012-04-20T22:00:00.000Z",
+                    "created": "2016-11-22T12:57:55.259Z",
+                    "active": true,
+                    "newsletter": true,
+                    "uid": "JNgNzUH3XdNnmi0IlMbNzR3SMm93",
+                    "tokenFCM": "asdfxcvb9876",
+                    "facebookUrl": "",
+                    "twitterUrl": "",
+                    "googlePlusUrl": "",
+                    "phoneNumber": "+420123456789",
+                    "points": 9000,
+                    "reviewed": false,
+                    "userRoleId": 1,
+                    "areaId": null
+                }
+            ]
+
+## User role Collection [/user-role]
+
+### List [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "code": "authenticated",
+                    "description": "Authenticated user"
+                },
+                {
+                    "code": "admin",
+                    "description": "Admin user"
+                },
+            ]
+
+### Create [POST]
+
++ Request (application/json)
+
+    + Body
+
+            [
+                {
+                    "code": "authenticated",
+                    "title": "Authenticated user"
+                }
+            ]
+
++ Response 201 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 2,
+                    "code": "authenticated",
+                    "title": "Authenticated user"
+                }
+            ]
+
+## User role [/user-role/{id}]
+
+### Update [PUT]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "code": "authenticated",
+                "title": "Authenticated user"
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 2,
+                    "code": "authenticated",
+                    "title": "Authenticated user"
+                }
+            ]
+
+### Delete [DELETE]
+
++ Response 204
+
+## Badge collection [/badge]
+
+### List [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "name": "Newbie"
+                }
+            ]
+
+## Badge [/badge/{id}]
+
+### Find [GET]
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "name": "Newbie",
+                "localityId": 1,
+                "created": "2016-01-31T12:22:50.00Z",
+                "points": 10
+            }
+
+### Create [POST]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "name": Veteran,
+                "localityId": 1,
+                "created": "2016-01-31T12:22:50.00Z",
+                "points": 10
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 2,
+                    "name": "Veteran",
+                    "localityId": 1,
+                    "created": "2016-01-31T12:22:50.00Z",
+                    "points": 10
+                }
+            ]
+
+### Update [PUT]
+
++ Request (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "name": Newbie,
+                "localityId": 1,
+                "created": "2016-01-31T12:22:50.00Z",
+                "points": 10
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 1,
+                    "name": "Newbie",
+                    "localityId": 1,
+                    "created": "2016-01-31T12:22:50.00Z",
+                    "points": 10
+                }
+            ]
+
+### Delete [DELETE]
+
++ Response 204
+
+## Organization [/organization/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Organization in the form of an integer
+
+### Get an Existing Organization [GET]
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "name": "Green Peace",
+                "description": "Treehugging freaks",
+                "type": 'other',
+                "gpsId": 1,
+                "created": "2016-05-16T12:34:56.000Z",
+                "mailSubject": "Subject updated",
+                "mailBody": "<html><head><title>Title of the document2</title></head><body>The content of the document......</body></html>",
+                "contactEmail": "test@org-one.com",
+                "contactPhone": "+420123456789",
+                "contactTwitter": "@greenpeaceIntl",
+                "contactFacebook": "greenpeace12345",
+                "contactUrl": "http://org-one.com",
+                "imageId": 1,
+                "parentId": 1
+            }
+
+### Update an Existing Organization [PUT]
+
++ Attributes
+    + name (string, required) - Name of organization
+    + mailSubject (string, required) - Mail subject
+    + mailBody (string, required) - Mail body
+    + parentId (number, optional) - ID of parent organization
+
++ Request (application/json)
+
+        {
+            "name": "Green Peace",
+            "description": "Treehugging freaks",
+            "type": 'other',
+            "gpsId": 1,
+            "mailSubject": "Subject updated",
+            "mailBody": "<html><head><title>Title of the document2</title></head><body>The content of the document......</body></html>",
+            "contactEmail": "test@org-one.com",
+            "contactPhone": "+420123456789",
+            "contactTwitter": "@greenpeaceIntl",
+            "contactFacebook": "greenpeace12345",
+            "contactUrl": "http://org-one.com",
+            "imageId": 1,
+            "parentId": 1,
+            "language": "en_US"
+        }
+
++ Response 201 (application/json)
+
+### Delete an Existing Organization [DELETE]
+
++ Response 204
+
+## Organization mailing [/organization/:id/{?emails}]
+
+### Send join invitations [POST]
+
++ Parameters
+
+    + emails (array) - list of email addresses
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "success": true,
+                "messagesSent": 4
+            }
+
+## Organization Activity [/organization/{id}/activity]
+
+### Organization Activity [GET]
+
++ Parameters
+
+    + id (number) - ID of the organization in the form of an integer
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "userId": 5,
+                    "trashId": 5,
+                    "updateTime": "2016-04-12T07:38:33.000Z",
+                    "changed": {
+                        "types": ["plastic"]
+                    }
+                },
+                {
+                    "userId": 5,
+                    "trashId": 5,
+                    "updateTime": "2016-04-12T07:38:33.000Z",
+                    "changed": {
+                        "types": ["domestic"]
+                    }
+                }
+            ]
+
+## Organization Users [/organization/{id}/users]
+
+### Organization Users [GET]
+
++ Parameters
+
+    + id (number) - ID of the organization in the form of an integer
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            [
+                {
+                    "id": 2,
+                    "firstName": "John",
+                    "lastName": "Doe",
+                    "email": "john@doe.com",
+                    "userInfo": "Description text",
+                    "birthDate": "1980-01-31",
+                    "registeredDate": "2016-10-02T12:34:56.000Z",
+                    "active": true,
+                    "activationKey": "asdfqwerty",
+                    "userRole": "authenticated",
+                    "image": {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 3
+                    },
+                    "token": "aedf1234",
+                    "tokenFCM" : "zxczxc",
+                    "deviceId": "1c234e5r6",
+                    "points": 123
+                },
+                {
+                    "id": 3,
+                    "firstName": "John",
+                    "lastName": "Connor",
+                    "email": "john@connor.com",
+                    "userInfo": "Hasta la vista, baby",
+                    "birthDate": "1980-01-31",
+                    "registeredDate": "2016-02-02T12:34:56.000Z",
+                    "active": true,
+                    "activationKey": "asdfqwerty",
+                    "userRole": "authenticated",
+                    "image": {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 16
+                    },
+                    "token": "aedf1234",
+                    "tokenFCM" : "zxczxc",
+                    "deviceId": "1c234e5r6",
+                    "points": 123
+                }
+            ]
+
+
+
+
+## Organization Statistics [/organization/{id}/stats]
+
+### Organization Statistics [GET]
+
++ Parameters
+
+    + id (number) - ID of the organization in the form of an integer
+
+
++ Response 200 (application/json)
+
+    + Body
+            {
+              "stats": {
+                "reported": "1792",
+                "updated": "314",
+                "cleaned": "14"
+              }
+            }
+
+
+
+## Organizations Collection [/organization/{?name,description,type,gpsId,mailSubject,mailBody,contactEmail,contactPhone,contactTwitter,contactFacebook,contactUrl,imageId,parentId,sort,page,limit}]
+
+### Get Organization List [GET]
+
++ Parameters
+
+    + name (optional, string)
+    + description (optional, string)
+    + type (optional, string)
+    + gpsId (optional, integer)
+    + mailSubject (optional, string)
+    + mailBody (optional, string)
+    + contactEmail (optional, string)
+    + contactPhone (optional, string)
+    + contactTwitter (optional, string)
+    + contactFacebook (optional, string)
+    + contactUrl (optional, string)
+    + imageId (optional, integer)
+    + parentId (optional, integer)
+    + sort (optional, string) - Comma separated ordering with prefix "-" for descending order
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Greenpeace",
+                "description": "Eco green trolls",
+                "created": "2016-12-04T12:46:40.943Z",
+                "mailBody": "Test lorem ipsum",
+                "mailSubject": "Test subject",
+                "contactEmail": "test@org-one.com",
+                "contactPhone": "+420123456789",
+                "contactTwitter": "@greenpeaceIntl",
+                "contactUrl": "http://org-one.com",
+                "_oldId": null,
+                "parentId": null,
+                "type": "other",
+                "imageId": "1",
+                "gpsId": "1",
+                "id": 1
+            },
+            {
+                "name": "Děti Země",
+                "description": "Treehugging freaks",
+                "created": "2016-12-04T12:46:40.944Z",
+                "mailBody": "Mail contents",
+                "mailSubject": "Test subject 2",
+                "contactEmail": "test@org-two.com",
+                "contactPhone": "+421917000456",
+                "contactTwitter": "@ech",
+                "contactUrl": "http://org-two.com",
+                "_oldId": null,
+                "parentId": "1",
+                "type": "shool",
+                "imageId": "3",
+                "gpsId": "2",
+                "id": 2
+            }
+        ]
+
+### Create a New Organization [POST]
+
++ Attributes
+    + name (string, required) - Name of organization
+    + mailSubject (string, required) - Mail subject
+    + mailBody (string, required) - Mail body
+    + parentId (number, optional) - ID of parent organization
+
++ Request (application/json)
+
+        {
+            + name (optional, string)
+            + description (optional, string)
+            + type (optional, string)
+            + gpsId (optional, integer)
+            + mailSubject (optional, string)
+            + mailBody (optional, string)
+            + contactEmail (optional, string)
+            + contactPhone (optional, string)
+            + contactTwitter (optional, string)
+            + contactFacebook (optional, string)
+            + contactUrl (optional, string)
+            + imageId (optional, integer)
+            + parentId (optional, integer)
+            + language (optional, string)
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 3
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## Spam [/spam/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Spam in the form of an integer
+
+### Get an Existing Spam [GET]
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 2,
+                "reportType": "trash",
+                "reportId": 3,
+                "userId": 3,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": "2016-04-15T07:38:33.000Z"
+            }
+
++ Response 404
+
++ Response 403
+
+### Resolve an Existing Spam [PUT]
+
++ Request (application/json)
+
++ Response 201 (application/json)
+
++ Response 404
+
++ Response 403
+
+### Delete an Existing Spam [DELETE]
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
+## Spams Collection [/spam/{?orderBy,page,limit}]
+
+### Get Spam List [GET]
+
++ Parameters
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order - "id", "trashPointActivityId", "collectionPointActivity", "eventId", "reported", "resolved"
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 2,
+                "trashPointActivityId": 6,
+                "collectionPointActivityId": 0,
+                "eventId": 0,
+                "userId": 3,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": "2016-04-15T07:38:33.000Z"
+            },
+            {
+                "id": 3,
+                "trashPointActivityId": 0,
+                "collectionPointActivityId": 0,
+                "eventId": 6,
+                "userId": 2,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": ""
+            }
+        ]
+
+### Create a New Spam [POST]
+
++ Attributes
+
+    + trashPointActivityId (number, optional) - Identifier of TrashPointActivity
+    + collectionPointActivityId (number, optional) - Identifier of CollectionPointActivity
+    + eventId (number, optional) - Identifier of Event
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: 1a2b3c4d ## Logged user's Firebase token
+
+    + Body
+
+            {
+                "trashPointActivityId": 3
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /spam/3
+
+    + Body
+
+            {
+                "id": 3
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## TrashPointActivity-Spams Collection [/spam/trash/{?orderBy,page,limit}]
+
+### Get Spam List [GET]
+
++ Parameters
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order - "id", "trashPointActivityId", "reported", "resolved"
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 2,
+                "trashPointActivityId": 3,
+                "userId": 3,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": "2016-04-15T07:38:33.000Z"
+            },
+            {
+                "id": 3,
+                "trashPointActivityId": 2,
+                "userId": 2,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": ""
+            }
+        ]
+
+### Create a New Spam [POST]
+
++ Attributes
+
+    + trashPointActivityId (number, required) - Identifier of TrashPointActivity
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: 1a2b3c4d ## Logged user's Firebase token
+
+    + Body
+
+            {
+                "trashPointActivityId": 3
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /spam/3
+
+    + Body
+
+            {
+                "id": 3
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## Event-Spams Collection [/spam/event/{?orderBy,page,limit}]
+
+### Get Spam List [GET]
+
++ Parameters
+
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order - "id", "eventId", "reported", "resolved"
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 2,
+                "eventId": 3,
+                "userId": 3,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": "2016-04-15T07:38:33.000Z"
+            },
+            {
+                "id": 3,
+                "eventId": 2,
+                "userId": 2,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": ""
+            }
+        ]
+
+### Create a New Spam [POST]
+
++ Attributes
+
+    + eventId (number, required) - Identifier of Event
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: 1a2b3c4d ## Logged user's Firebase token
+
+    + Body
+
+            {
+                "eventId": 3
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /spam/3
+
+    + Body
+
+            {
+                "id": 3
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## CollectionPoint-Spams Collection [/spam/collection-point/{?orderBy,page,limit}]
+
+### Get Spam List [GET]
+
++ Parameters
+
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order - "id", "collectionPointActivityId", "reported", "resolved"
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 2,
+                "collectionPointId": 3,
+                "userId": 3,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": "2016-04-15T07:38:33.000Z"
+            },
+            {
+                "id": 3,
+                "collectionPointId": 2,
+                "userId": 2,
+                "reported": "2016-04-12T07:38:33.000Z",
+                "resolved": ""
+            }
+        ]
+
+### Create a New Spam [POST]
+
++ Attributes
+
+    + collectionPointActivityId (number, required) - Identifier of CollectionPointActivity
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: 1a2b3c4d ## Logged user's Firebase token
+
+    + Body
+
+            {
+                "collectionPointActivityId": 3
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /spam/3
+
+    + Body
+
+            {
+                "id": 3
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## Event [/event/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Event in the form of an integer
+
+### Get an Existing Event [GET]
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "images": [
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 3
+                    }
+                ],
+                "name": "Cleaning",
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 36.123456,
+                    "accuracy": 5,
+                    "source": "network",
+                    "area": {}
+                },
+                "cleaningArea": {
+                    "upperLeft": {
+                        "lat": 50.083677,
+                        "long": 14.426023,
+                        "accuracy": 10,
+                        "source": "network"
+                    },
+                    "bottomRight": {
+                        "lat": 50.052761,
+                        "long": 14.513095,
+                        "accuracy": 10,
+                        "source": "network"
+                    }
+                },
+                "description": "Lorem ipsum",
+                "start": "2016-04-12T07:38:33.000Z",
+                "duration": 4,
+                "bring": "Shovel, bags",
+                "have": "Gloves...",
+                "childFriendly": true,
+                "contact": {
+                    "email": "john@doe.com",
+                    "phone": "111222333"
+                },
+                "trashPoints": [
+                    {
+                        "id":" 3,
+                        "gps": {
+                            "lat": 53.123456,
+                            "long": 12.456456,
+                            "accuracy": 6,
+                            "source": "wifi"
+                            "area": {}
+                        },
+                        "images": [
+                            {
+                                "created": "2016-11-23T14:01:15.237Z",
+                                "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                                "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                                "thumbDownloadUrl": null,
+                                "thumbStorageLocation": null,
+                                "thumbRetinaStorageLocation": null,
+                                "thumbRetinaDownloadUrl": null,
+                                "id": 3
+                            }
+                        ],
+                        "types": [
+                            "metal",
+                            "domestic",
+                            "liquid"
+                        ],
+                        "size": "bag",
+                        "status": "stillHere",
+                        "created": "2016-04-12T07:38:33.000Z"
+                    }
+                ],
+                "collectionPoints": []
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Update an Existing Event [PUT]
+
++ Attributes
+    + images (array, optional) - Array of Image objects
+    + name (array, required) - name
+    + gps (object, required) - GPS with lat, long, accuracy and source ("wifi"|"network"|"gps")
+    + cleaningArea (object, optional) - Object with properties upperLeft and bottomRight (both containing latitude and longitude)
+    + description (array, optional) - Event description
+    + start (string, required) - Timestamp
+    + duration (number, optional) - Event duration from start in minutes
+    + bring (string, optional) - What you have to bring with you to this event
+    + have (string, optional) - What event organizators already have
+    + childFriendly (boolean, optional) - Whether the event is child friendly
+    + contact (object, required) - Object with properties email and phone
+    + trashPointIds (array, required) - Array of TrashPoint ids that belongs to this event
+    + collectionPointIds (array, required) - Array of CollectionPoint ids that belongs to this event
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+            {
+                "name": "Cleanin'N'Fixin",
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 0,
+                    "source": "gps"
+                },
+                "cleaningArea": {
+                    "upperLeft": {
+                        "lat": 50.083677,
+                        "long": 14.426023,
+                        "accuracy": 10,
+                        "source": "network"
+                    },
+                    "bottomRight": {
+                        "lat": 50.052761,
+                        "long": 14.513095,
+                        "accuracy": 10,
+                        "source": "network"
+                    }
+                },
+                "description": "Lorem ipsum",
+                "start": "2016-04-12T07:38:33.000Z",
+                "duration": 4,
+                "bring": "Shovel, bags",
+                "have": "Gloves...",
+                "childFriendly": true,
+                "contact": {
+                    "email": "john@doe.com",
+                    "phone": "111222333"
+                },
+                "trashPointIds": [1,2,3],
+                "collectionPointIds": [3,4]
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /event/2
+
+    + Body
+
+            {
+                "id": 2
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Delete an Existing Event [DELETE]
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Join Users to Event [/event/{id}/users]
+
++ Parameters
+
+    + id (number, required) - ID of the Event in the form of an integer
+
+### Join Users to Event [POST]
+
++ Attributes
+    + users (array, optional) - Array of User identifiers (only administrator can join other users) instead of using X-Token as User identifier (if used, X-Token will be used for admin authorization only)
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+            {
+                "userIds": [1, 2 ,3]
+            }
+
++ Response 200 (application/json)
+
+        {
+            "statusCode": 200
+        }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## User in Event [/event/{id}/users/{userId}]
+
++ Parameters
+    + id (number, required) - ID of the Event in the form of an integer
+    + userId (number, required) - ID of the User in the form of an integer
+
+### Update User in Event [PUT]
+
++ Attributes
+    + confirmed (boolean, optional) - Whether is user confirmed
+    + feedbackGuessGuestCount (number, optional) - Feedback
+    + feedbackGuessTrashCount (number, optional) - Feedback
+
++ Request (application/json)
+
+        {
+            "confirmed": true
+        }
+
++ Response 200 (application/json)
+
+        {
+            "statusCode": 200
+        }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Delete User from Event [DELETE]
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Event Collection [/event/{?area,geocells,geoAreaStreet,geoAreaZip,geoAreaCity,geoAreaAa3,geoAreaAa2,geoAreaAa1,geoAreaCountry,geoAreaContinent,spam,unreviewed,timeBoundaryFrom,timeBoundaryTo,eventDescription,eventIds,attributesNeeded,orderBy,userPosition,page,limit}]
+
+### Get Event List [GET]
+
++ Parameters
+    + area (optional, string) - Comma separated latitude and longitude of top left corner and bottom right corner. Example: 54.123456,53.123456,56.123456,34.123456
+    + geocells (optional, string) - Comma separated geocells
+    + geoAreaStreet (optional, string) - Street
+    + geoAreaZip (optional, string) - Zip
+    + geoAreaCity (optional, string) - City
+    + geoAreaAa3 (optional, string)- Administrative area 3
+    + geoAreaAa2 (optional, string) - Administrative area 2
+    + geoAreaAa1 (optional, string) - Administrative area 1
+    + geoAreaCountry (optional, string) - Country
+    + geoAreaContinent (optional, string) - Continent
+    + spam (optional, boolean) - Whether event is marked as spam
+    + unreviewed (optional, boolean) - Whether event is marked as unreviewed
+    + timeBoundaryFrom (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z"
+    + timeBoundaryTo (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z" - required when timeBoundaryFrom is set
+    + eventDescription (optional, string) - Text
+    + eventIds (optional, string) - Comma separated event identifiers
+    + attributesNeeded (optional, string) - Comma separated attributes which will be contained in the result. Attributes are "id", "name", "gpsShort", "gpsFull", "images", "description", "bring", "have" "cleaningArea", "start", "duration", "contact", "childFriendly", "trashPointIds", "collectionPointIds"
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order - "id", "gps", "created", "reviewed", "description"
+    + userPosition (optional, string) - Comma separated latitude and longitude of current user position. Required when attribute "orderBy" is used.
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "name": "Cleanin'N'Fixin",
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 0,
+                    "source": "gps"
+                },
+                "cleaningArea": {
+                    "upperLeft": {
+                        "lat": 50.083677,
+                        "long": 14.426023,
+                        "accuracy": 10,
+                        "source": "network"
+                    },
+                    "bottomRight": {
+                        "lat": 50.052761,
+                        "long": 14.513095,
+                        "accuracy": 10,
+                        "source": "network"
+                    }
+                },
+                "description": "Lorem ipsum",
+                "start": "2016-04-12T07:38:33.000Z",
+                "duration": 4,
+                "bring": "Shovel, bags",
+                "have": "Gloves...",
+                "childFriendly": true,
+                "contact": {
+                    "email": "john@doe.com",
+                    "phone": "111222333"
+                },
+                ,
+                "trashIds": [1,2,3],
+                "collectionPointIds": [1]
+            },
+            {
+                "name": "Cleaning",
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 36.123456,
+                    "accuracy": 5,
+                    "source": "network"
+                },
+                "cleaningArea": {
+                    "upperLeft": {
+                        "lat": 50.083677,
+                        "long": 14.426023,
+                        "accuracy": 10,
+                        "source": "network"
+                    },
+                    "bottomRight": {
+                        "lat": 50.052761,
+                        "long": 14.513095,
+                        "accuracy": 10,
+                        "source": "network"
+                    }
+                },
+                "description": "Lorem ipsum",
+                "start": "2016-04-12T07:38:33.000Z",
+                "duration": 4,
+                "bring": "Shovel, bags",
+                "have": "Gloves...",
+                "childFriendly": false,
+                "contact": {
+                    "email": "john@doe.com",
+                    "phone": "111222333"
+                },
+                ,
+                "trashIds": [4],
+                "collectionPointIds": [3,4]
+            }
+        ]
+
+### Create a New Event [POST]
+
++ Attributes
+    + images (array, optional) - Array of Image objects
+    + name (array, required) - name
+    + gps (object, required) - GPS with lat, long, accuracy and source ("wifi"|"network"|"gps")
+    + cleaningArea (object, optional) - Object with properties upperLeft and bottomRight (both containing latitude and longitude)
+    + description (array, optional) - Event description
+    + start (string, required) - Timestamp
+    + duration (number, optional) - Event duration from start in minutes
+    + bring (string, optional) - What you have to bring with you to this event
+    + have (string, optional) - What event organizators already have
+    + childFriendly (boolean, optional) - Whether the event is child friendly
+    + contact (object, required) - Object with properties email and phone
+    + trashPointIds (array, optional) - Array of TrashPoint ids that belongs to this event
+    + collectionPointIds (array, optional) - Array of CollectionPoint ids that belongs to this event
+
++ Request (application/json)
+
+        {
+            "images": [
+                {
+                    "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                    "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                    "thumbDownloadUrl": null,
+                    "thumbStorageLocation": null,
+                    "thumbRetinaStorageLocation": null,
+                    "thumbRetinaDownloadUrl": null
+                }
+            ],
+            "name": "New cleaning",
+            "gps": {
+                "lat": 54.123456,
+                "long": 36.123456,
+                "accuracy": 5,
+                "source": "network"
+            },
+            "cleaningArea": {
+                "upperLeft": {
+                    "lat": 50.083677,
+                    "long": 14.426023,
+                    "accuracy": 10,
+                    "source": "network"
+                },
+                "bottomRight": {
+                    "lat": 50.052761,
+                    "long": 14.513095,
+                    "accuracy": 10,
+                    "source": "network"
+                }
+            },
+            "description": "Lorem ipsum",
+            "start": "2016-04-12T07:38:33.000Z",
+            "duration": 4,
+            "bring": "Shovel, bags",
+            "have": "Gloves...",
+            "childFriendly": true,
+            "contact": {
+                "email": "john@doe.com",
+                "phone": "111222333"
+            },
+            "trashPointIds": [1,2,3],
+            "collectionPointIds": []
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /event/2
+
+    + Body
+
+            {
+                "id": 1,
+                "statusCode": 200
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
+## Collection Point [/collection-point/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Collection Point in the form of an integer
+
+### Get an Existing Collection Point [GET]
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 1,
+                "activityId": 1,
+                "images":  [
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 4
+                    },
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 5
+                    },
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": null,
+                        "id": 6
+                    }
+                ],
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 36.123456,
+                    "accuracy": 5,
+                    "source": "network",
+                    "area": {}
+                },
+                "note": "Lorem ipsum",
+                "userInfo": {
+                    "id": 6,
+                    "firstName": "Brambor",
+                    "lastName": "Vomáčka"
+                },
+                "openingHours": [
+                    { "Monday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Tuesday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Wednesday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Thursday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Friday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Saturday":
+                        []
+                    },
+                    { "Sunday":
+                        []
+                    }
+                ],
+                "url": "https://www.trashout.ngo/collection-point/4606923655610368",
+                "size": "scrapyard",
+                "types": [
+                    "plastic",
+                    "metal",
+                    "organic"
+                ],
+                "created": "2016-01-12T07:38:33.000Z",
+                "updateTime": null,
+                "updateHistory": [],
+                "events": [
+                    {
+                        "id": 1,
+                        "name": "Jarní sběr",
+                        "gps": {
+                            "lat": "50.123456",
+                            "long": "14.123456",
+                            "accuracy": 50,
+                            "source": "wifi",
+                            "area": {
+                                "continent": "Europe",
+                                "country": "Czech Republic",
+                                "aa1": "Středočeský kraj",
+                                "aa2": null,
+                                "aa3": null,
+                                "locality": "Praha",
+                                "subLocality": "Praha 2",
+                                "street": null,
+                                "zip": null
+                            }
+                        },
+                        "description": "Lorem ipsum",
+                        "start": "2017-05-15T08:00:00.000Z",
+                        "duration": 120
+                    }
+                ]
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Update an Existing Collection Point [PUT]
+
++ Attributes
+
+    + images (array, optional) - Array of Image objects
+    + gps (object, required) - GPS with lat, long, accuracy and source ("wifi"|"network"|"gps")
+    + openingHours(array, optional) - Array of objects
+    + size (string, required) - CollectionPoint size ("dustbin"|"scrapyard")
+    + types (array, optional) - Array of CollectionPoint types
+    + name (string, optional) - name
+    + note (string, optional) - CollectionPoint description
+    + phone (string, optional) - Phone
+    + email (string, optional) - Email
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+            {
+                "images": [
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "1c",
+                        "thumbStorageLocation": "1d",
+                        "thumbRetinaStorageLocation": "1e",
+                        "thumbRetinaDownloadUrl": "1f"
+                    },
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "2c",
+                        "thumbStorageLocation": "2d",
+                        "thumbRetinaStorageLocation": "2e",
+                        "thumbRetinaDownloadUrl": "2f"
+                    }
+                ],
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 0,
+                    "source": "gps"
+                },
+                "note": "Lorem ipsum"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /collection-point/2
+
+    + Body
+
+            {
+                "id": 2,
+                "activityId": 3,
+                "statusCode": 200
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+### Delete an Existing Collection Point [DELETE]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
++ Response 204
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Collection Point Collection [/collection-point/{?area,geoAreaStreet,geoAreaZip,geoAreaCity,geoAreaAa3,geoAreaAa2,geoAreaAa1,geoAreaCountry,geoAreaContinent,spam,unreviewed,timeBoundaryFrom,timeBoundaryTo,collectionPointSize,collectionPointType,collectionPointNote,collectionPointIds,userIds,attributesNeeded,orderBy,userPosition,page,limit}]
+
+### Get Collection Point List [GET]
+
++ Parameters
+    + area (optional, string) - Comma separated latitude and longitude of top left corner and bottom right corner. Example: 54.123456,53.123456,56.123456,34.123456
+    + geoAreaStreet (optional, string) - Street
+    + geoAreaZip (optional, string) - Zip
+    + geoAreaCity (optional, string) - City
+    + geoAreaAa3 (optional, string)- Administrative area 3
+    + geoAreaAa2 (optional, string) - Administrative area 2
+    + geoAreaAa1 (optional, string) - Administrative area 1
+    + geoAreaCountry (optional, string) - Country
+    + geoAreaContinent (optional, string) - Continent
+    + spam (optional, boolean) - Whether collection point is marked as spam
+    + unreviewed (optional, boolean) - Whether collection point is marked as unreviewed
+    + timeBoundaryFrom (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z"
+    + timeBoundaryTo (optional, string) - Timestamp format "2016-04-12T07:38:33.000Z" - required when timeBoundaryFrom is set
+    + collectionPointSize (optional, string) - Comma separated sizes - "dustbin", "scrapyard"
+    + collectionPointType (optional, string) - Comma separated types - "plastic", "metal", "electronic", "deadAnimals", "organic"
+    + collectionPointNote (optional, string) - Text
+    + collectionPointIds (optional, string) - Comma separated collection point identifiers
+    + userIds (optional, string) - Comma separated user identifiers (users who created report or made actualization)
+    + attributesNeeded (required, string) - Comma separated attributes which will be contained in the result. Attributes are "id", "gpsShort", "gpsFull", "types", "size", "name", "note", "email", "phone", "openingHours", "userInfo", "images", "updateTime", "updateHistory", "url", "updateNeeded"
+    + orderBy (optional, integer) - Comma separated ordering with prefix "-" for descending order
+    + userPosition (optional, string) - Comma separated latitude and longitude of current user position. Required when attribute "orderBy=gps" is used.
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 5,
+                    "source": "wifi"
+                },
+                "name": "Common dustbin",
+                "note": "Lorem ipsum",
+                "phone": "+420 789 456 123",
+                "email": "bum@bum.com",
+                "userInfo": {
+                    "id": 7,
+                    "firstName": "John",
+                    "firstName": "Doe"
+                },
+                "images": [
+                    {
+                        "created": "2016-11-23T14:01:15.237Z",
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": null,
+                        "thumbStorageLocation": null,
+                        "thumbRetinaStorageLocation": null,
+                        "thumbRetinaDownloadUrl": "01-01-created.jpg",
+                        "id": 4
+                    }
+                ],
+                "updateTime": "",
+                "updateHistory": [],
+                "url": "https://www.trashout.ngo/collection-point/4606923655610368",
+                "size": "dustbin",
+                "types": [
+                    "plastic",
+                    "metal",
+                    "organic"
+                ]
+            },
+            {
+                "id": 2,
+                "gps": {
+                    "lat": 57.123456,
+                    "long": 36.123456,
+                    "accuracy": 2,
+                    "source": "gps"
+                },
+                "name": "Professional scrapyard",
+                "note": "Lorem ipsum",
+                "phone": "+420 789 456 123",
+                "email": "bum@bum.com",
+                "userInfo": {
+                    "id": 7,
+                    "firstName": "John",
+                    "firstName": "Doe"
+                },
+                "openingHours": [
+                    { "Monday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Tuesday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Wednesday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Thursday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Friday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Saturday":
+                        []
+                    },
+                    { "Sunday":
+                        []
+                    }
+                ],
+                "images": [],
+                "updateTime": "2016-04-12T07:38:33.000Z",
+                "updateHistory": [
+                    {
+                        "userId": 2,
+                        "updateTime": "2016-04-12T07:38:33.000Z",
+                        "changed": {
+                            "note": "Lorem i psům"
+                        }
+                    }
+                ],
+                "url": "https://www.trashout.ngo/collection-point/4606923655610368",
+                "size": "scrapyard",
+                "types": [
+                    "plastic",
+                    "metal",
+                    "organic"
+                ]
+            }
+        ]
+
+### Create a New Collection Point [POST]
+
++ Attributes
+
+    + images (array, optional) - Array of Image objects
+    + gps (object, required) - GPS with lat, long, accuracy and source ("wifi"|"network"|"gps")
+    + openingHours(array, optional) - Array of objects
+    + size (string, required) - CollectionPoint size ("dustbin"|"scrapyard")
+    + types (array, optional) - Array of CollectionPoint types
+    + name (string, optional) - name
+    + note (string, optional) - CollectionPoint description
+    + phone (string, optional) - Phone
+    + email (string, optional) - Email
+
++ Request (application/json)
+
+    + Headers
+
+            X-Token: e64as3dw53a5w1daw5d3sdasdaskdasd5sad2
+
+    + Body
+
+            {
+                "images": [
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "1c",
+                        "thumbStorageLocation": "1d",
+                        "thumbRetinaStorageLocation": "1e",
+                        "thumbRetinaDownloadUrl": "1f"
+                    },
+                    {
+                        "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                        "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                        "thumbDownloadUrl": "2c",
+                        "thumbStorageLocation": "2d",
+                        "thumbRetinaStorageLocation": "2e",
+                        "thumbRetinaDownloadUrl": "2f"
+                    }
+                ],
+                "gps": {
+                    "lat": 54.123456,
+                    "long": 54.123456,
+                    "accuracy": 0,
+                    "source": "network"
+                },
+                "openingHours": [
+                    { "Monday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Tuesday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Wednesday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Thursday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Friday":
+                        [
+                            { "Start": "0900", "Finish": "1300" },
+                            { "Start": "1400", "Finish": "1800" }
+                        ]
+                    },
+                    { "Saturday":
+                        []
+                    },
+                    { "Sunday":
+                        []
+                    }
+                ],
+                "name": "Professional scrapyard",
+                "note": "Lorem ipsum",
+                "phone": "+420 779 321 456",
+                "email": "bum@bum.com",
+                "size": "scrapyard",
+                "types": [
+                    "plastic",
+                    "metal",
+                    "organic"
+                ]
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /collection-point/2
+
+    + Body
+
+            {
+                "id": 1,
+                "activityId": 3,
+                "statusCode": 200
+            }
+
++ Response 403 (application/json)
+
+    + Body
+
+            {
+                "message": "error"
+            }
+
++ Response 500
+
+## Area [/area/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Area in the form of an integer
+
+### Get an Existing Area [GET]
+
++ Response 201 (application/json)
+
+
+    + Body
+
+            {
+                "id": 1,
+                "centerLat": 54.123456,
+                "centerlong": 13.123456,
+                "type": "subLocality",
+                "continent": "Europe",
+                "country": "Czech Republic",
+                "aa1": "Středočeský kraj",
+                "aa2": "",
+                "aa3": "",
+                "locality": "Praha",
+                "subLocality": "Praha 1",
+                "street": null,
+                "zip": null,
+                "zoomLevel": 1
+                "aliasId": null
+            }
+
++ Response 404 (application/json)
+
+    + Body
+
+            {
+                "todo":"todo"
+            }
+
++ Response 403
+
++ Response 500
+
+### Update an Existing Area [PUT]
+
++ Attributes
+
+    + aliasId (number, optional) - alias area ID
+
++ Request (application/json)
+
+        {
+            "aliasId": 3
+        }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+                "id": 2
+            }
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Area Collection [/area/{?continent,country,aa1,aa2,aa3,locality,subLocality,street,zip,alias,type,page,limit}]
+
+### Get Area List [GET]
+
++ Parameters
+    + continent (optional, string) - Continent
+    + country (optional, string) - Country
+    + aa1 (optional, string) - Administrative area 1
+    + aa2 (optional, string) - Administrative area 2
+    + aa3 (optional, string)- Administrative area 3
+    + locality (optional,string) - City (locality)
+    + subLocality (optional, string) - Sub locality
+    + street (optional, string) - Street
+    + zip (optional, string) - Zip
+    + alias (optional, boolean) - Alias (true - all the areas that has at least one alias,  false - all the areas, null - main areas without aliases)
+    + type (optional, string) - Area type (continent, country, aa1, aa2, locality, subLocality, street, zip)
+    + page (optional, integer) - Page
+    + limit (optional, integer) - Limit
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "centerLat": 54.123456,
+                "centerlong": 13.123456,
+                "type": "subLocality",
+                "continent": "Europe",
+                "country": "Czech Republic",
+                "aa1": "Středočeský kraj",
+                "aa2": "",
+                "aa3": "",
+                "locality": "Praha",
+                "subLocality": "Praha 1",
+                "street": null,
+                "zip": null,
+                "zoomLevel": 1
+                "aliasId": null,
+                "stillHere": 3,
+                "less": 0,
+                "more": 0,
+                "cleaned": 0
+            },
+            {
+                "id": 2,
+                "centerLat": 54.123456,
+                "centerlong": 13.123456,
+                "type": "street",
+                "continent": "Europe",
+                "country": "Czech Republic",
+                "aa1": "Středočeský kraj",
+                "aa2": "",
+                "aa3": "",
+                "locality": "Praha",
+                "subLocality": "Praha 1",
+                "street": "Vodičkova",
+                "zip": null,
+                "zoomLevel": 1
+                "aliasId": null
+                "stillHere": 3,
+                "less": 0,
+                "more": 0,
+                "cleaned": 0
+            },
+            {
+                "id": 3,
+                "centerLat": 54.123456,
+                "centerlong": 13.123456,
+                "type": "zip",
+                "continent": "Europe",
+                "country": "Czech Republic",
+                "aa1": "Středočeský kraj",
+                "aa2": "",
+                "aa3": "",
+                "locality": "Praha",
+                "subLocality": "Praha 1",
+                "street": "Vodičkova",
+                "zip": 22,
+                "zoomLevel": 1
+                "aliasId": null
+                "stillHere": 3,
+                "less": 0,
+                "more": 0,
+                "cleaned": 0
+        ]
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## Area Aliases [/area/aliases/{id}]
+
++ Parameters
+
+    + id (number) - ID of the Area in the form of an integer
+
+### Get an Existing Aliases for given Area [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "centerLat": 54.123456,
+                "centerlong": 13.123456,
+                "type": "subLocality",
+                "continent": "Europe",
+                "country": "Czech Republic",
+                "aa1": "Středočeský kraj",
+                "aa2": "",
+                "aa3": "",
+                "locality": "Praha",
+                "subLocality": "Praha 1",
+                "street": null,
+                "zip": null,
+                "zoomLevel": 1
+                "aliasId": 2
+            }
+        ]
+
++ Response 404
+
++ Response 403
+
++ Response 500
+
+## PR content - article collection [/prContent/{?language,page,limit,order}]
+
+### Get articles list [GET]
+
++ Parameters
+    + language (string, optional) - Locale code (cs_CZ, en_US, ...), default = cs_CZ
+    + page (integer, optional) - List page, default = 1
+    + limit (integer, optional) - Items per page, default = all
+    + order (string, optional) - Ordering (id, title, created) with sign "-" for descending order, default = -created
+
++ Response 200 (application/json)
+
+        [
+            {
+                "title": "Článek jedna",
+                "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
+                "url": "http://www.example.com/article/1",
+                "language": "cs_CZ",
+                "tags": "trash, planes, ecology, garbage",
+                "userId": 1,
+                "appIosUrl": "http://www.example.com/app/ios",
+                "appAndroidUrl": "http://www.example.com/app/android",
+                "appWindowsUrl": "http://www.example.com/app/windows",
+                "created": "2016-11-29T11:43:35.621Z",
+                "id": 1,
+                "areaId": 11,
+                "prContentImage": [
+                  {
+                    "main": true,
+                    "id": 1,
+                    "imageId": 2,
+                    "pRContentId": 1,
+                    "image": {
+                      "created": "2016-11-29T11:43:35.649Z",
+                      "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                      "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                      "thumbDownloadUrl": null,
+                      "thumbStorageLocation": null,
+                      "thumbRetinaStorageLocation": null,
+                      "thumbRetinaDownloadUrl": "def",
+                      "_oldUrl": null,
+                      "_oldImageKey": null,
+                      "id": 2
+                    }
+                  }
+                ],
+                "prContentVideo": [
+                  {
+                    "url": "https://www.youtube.com/watch?v=wa0nLXVFZR0",
+                    "created": "2016-11-29T11:43:35.630Z",
+                    "id": 1,
+                    "prContentId": 1,
+                    "pRContentId": 1
+                  }
+                ]
+            }
+        ]
+
++ Response 404
+
+## PR content - article [/prContent/{id}]
+
+### Get article detail [GET]
+
++ Parameters
+    + id (integer)
+
++ Response 200 (application/json)
+
+        {
+            "title": "Článek jedna",
+            "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
+            "url": "http://www.example.com/article/1",
+            "language": "cs_CZ",
+            "tags": "trash, planes, ecology, garbage",
+            "userId": 1,
+            "appIosUrl": "http://www.example.com/app/ios",
+            "appAndroidUrl": "http://www.example.com/app/android",
+            "appWindowsUrl": "http://www.example.com/app/windows",
+            "created": "2016-11-29T11:43:35.621Z",
+            "id": 1,
+            "areaId": 11,
+            "prContentImage": [
+              {
+                "main": true,
+                "id": 1,
+                "prContentId": 1,
+                "imageId": 2,
+                "image": {
+                  "created": "2016-11-29T11:43:35.649Z",
+                  "fullStorageLocation": "gs://trashoutngo-dev.appspot.com/temp-images/02-02-updated.jpg",
+                  "fullDownloadUrl": "https://firebasestorage.googleapis.com/v0/b/trashoutngo-dev.appspot.com/o/temp-images%2F02-02-updated.jpg?alt=media&token=dd376894-fc67-4c59-8de8-3d1a7d064265",
+                  "thumbDownloadUrl": null,
+                  "thumbStorageLocation": null,
+                  "thumbRetinaStorageLocation": null,
+                  "thumbRetinaDownloadUrl": "def",
+                  "_oldUrl": null,
+                  "_oldImageKey": null,
+                  "id": 2
+                }
+              }
+            ],
+            "prContentVideo": [
+              {
+                "url": "https://www.youtube.com/watch?v=wa0nLXVFZR0",
+                "created": "2016-11-29T11:43:35.630Z",
+                "id": 1,
+                "prContentId": 1,
+                "pRContentId": 1
+              }
+            ]
+        }
+
++ Response 404

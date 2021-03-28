@@ -1,0 +1,23 @@
+{
+  "name": "UserAreaRole",
+  "base": "BaseModel",
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user_area_role"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

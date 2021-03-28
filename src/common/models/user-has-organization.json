@@ -1,0 +1,93 @@
+{
+  "name": "UserHasOrganization",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user_has_organization"
+    }
+  },
+  "properties": {
+    "_userEmail": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "_user_email",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "_oldId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldId",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "organizationId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "organizationRoleId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "organization_role_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "organizationId",
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "organizationRole": {
+      "type": "belongsTo",
+      "model": "OrganizationRole",
+      "foreignKey": "organizationRoleId",
+      "postgresql": {
+        "columnName": "organization_role_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

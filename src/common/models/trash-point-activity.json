@@ -1,0 +1,205 @@
+{
+  "name": "TrashPointActivity",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "trash_point_activity"
+    }
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "note": {
+      "type": "string"
+    },
+    "anonymous": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "changed": {
+      "type": "Object",
+      "postgresql": {
+        "dataType": "text"
+      }
+    },
+    "cleanedByMe": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "cleaned_by_me"
+      }
+    },
+    "trashPointSizeId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_size_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "organizationId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "gpsId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "gps_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "trashPointId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "lastId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "last_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "isFirst": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "is_first",
+        "dataType": "boolean",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "size": {
+      "type": "belongsTo",
+      "model": "TrashPointSize",
+      "foreignKey": "trashPointSizeId",
+      "postgresql": {
+        "columnName": "trash_point_size_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "types": {
+      "type": "hasAndBelongsToMany",
+      "model": "TrashPointType",
+      "foreignKey": "trashPointTypeId",
+      "through": "TrashPointActivityHasTrashPointType"
+    },
+    "accessibilities": {
+      "type": "hasAndBelongsToMany",
+      "model": "AccessibilityType",
+      "foreignKey": "accessibilityTypeId",
+      "through": "TrashPointActivityHasAccessibilityType"
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "TrashPointActivityHasImage",
+      "foreignKey": "trashPointActivityId",
+      "postgresql": {
+        "columnName": "trash_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "organizationId",
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "gps": {
+      "type": "belongsTo",
+      "model": "GPS",
+      "foreignKey": "gpsId",
+      "postgresql": {
+        "columnName": "gps_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "history": {
+      "type": "hasMany",
+      "model": "TrashPointActivity",
+      "foreignKey": "lastId",
+      "columnName": "last_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    },
+    "trashPoint": {
+      "type": "belongsTo",
+      "model": "TrashPoint",
+      "foreignKey": "trashPointId",
+      "postgresql": {
+        "columnName": "trash_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "spam": {
+      "type": "hasMany",
+      "model": "Spam",
+      "foreignKey": "trashPointActivityId",
+      "columnName": "trash_point_activity_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

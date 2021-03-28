@@ -1,0 +1,28 @@
+{
+  "name": "AccessibilityType",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "accessibility_type"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "activities": {
+      "type": "hasAndBelongsToMany",
+      "model": "TrashPointActivity",
+      "foreignKey": "trashPointActivityId",
+      "through": "TrashPointActivityHasAccessibilityType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

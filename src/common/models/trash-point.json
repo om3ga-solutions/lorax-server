@@ -1,0 +1,123 @@
+{
+  "name": "TrashPoint",
+  "plural": "Trash",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "trash_point"
+    }
+  },
+  "properties": {
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "reviewed": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "organizationId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "_oldId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldId",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "activities": {
+      "type": "hasMany",
+      "model": "TrashPointActivity",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "organizationId",
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "events": {
+      "type": "hasMany",
+      "model": "Event",
+      "foreignKey": "trashPointId",
+      "through": "TrashPointHasEvent",
+      "postgresql": {
+        "columnName": "trash_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "comments": {
+      "type": "hasMany",
+      "model": "Comments"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["getTrash", "list", "listCount", "zoomPoints", "notificationTest", "getComments", "getComment", "addComment", "deleteComment"]
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["getTrash", "list", "listCount", "zoomPoints", "reportTrash", "updateTrash", "deleteTrash", "deleteActivity", "deleteActivityImage", "notificationTest", "getComments", "getComment", "addComment", "deleteComment"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,211 @@
+<%- include('../includes/header'); %>
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+  <tbody>
+    <tr>
+      <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+
+        <p dir="ltr" style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif"><%- translations['mail.newsletter.greeting'] %> <%- name %>,<br>
+            <br>
+            <%- translations['mail.newsletter.p1'] %>&nbsp;
+            <br>
+            <br>
+            <span style="color:#8cc947"><%- translations['mail.newsletter.area'] %>:</span><br>
+            <%- area %>
+          </span></p>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  <tbody class="mcnCaptionBlockOuter">
+    <tr>
+      <td class="mcnCaptionBlockInner" valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightContentOuter" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+          <tbody>
+            <tr>
+              <td valign="top" class="mcnCaptionRightContentInner" width="36" style="padding: 0 0 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" style="margin-right:10px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <tbody><tr>
+                      <td class="mcnCaptionRightImageContent" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                        <img alt="" src="https://gallery.mailchimp.com/e0977c739b58029d874c230da/images/8d54a596-a02a-4c71-94d3-f040088131f7.png" width="36" style="max-width: 36px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage">
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+             <td valign="top" class="mcnCaptionRightContentInner" style="padding: 0 9px 0 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnCaptionRightTextContentContainer" align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <tbody><tr>
+                      <td valign="top" class="mcnTextContent" style="font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-size: 16px;line-height: 210%;text-align: left;">
+                        <span style="color:#FF0000"><%- translations['mail.newsletter.heading1'] %></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+             </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% if(trashes.created.length) { %>
+
+  <% trashes.created.forEach(trash => { %>
+    <%- include('block-trash', {baseUrl: baseUrl, trash: trash, translations: translations}); %>
+  <% }) %>
+
+<% } else { %>
+  <%- include('block-empty', {baseUrl: baseUrl, translations: translations}); %>
+<% } %>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  <tbody class="mcnCaptionBlockOuter">
+    <tr>
+      <td class="mcnCaptionBlockInner" valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightContentOuter" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+          <tbody>
+            <tr>
+              <td valign="top" class="mcnCaptionRightContentInner" width="36" style="padding: 0 0 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" style="margin-right:10px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <tbody>
+                    <tr>
+                      <td class="mcnCaptionRightImageContent" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                        <img alt="" src="https://gallery.mailchimp.com/e0977c739b58029d874c230da/images/0bc6ed1b-7fad-47c5-a37a-3e37556ea36a.png" width="36" style="max-width: 36px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage">
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td valign="top" class="mcnCaptionRightContentInner" style="padding: 0 9px 0 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnCaptionRightTextContentContainer" align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <tbody><tr>
+                      <td valign="top" class="mcnTextContent" style="font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-size: 16px;line-height: 210%;text-align: left;">
+                        <span style="color:#FF9900"><%- translations['mail.newsletter.heading2'] %></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% if(trashes.updated.length) { %>
+
+  <% trashes.updated.forEach(trash => { %>
+    <%- include('block-trash', {baseUrl: baseUrl, trash: trash}); %>
+  <% }) %>
+
+<% } else { %>
+  <%- include('block-empty', {baseUrl: baseUrl}); %>
+<% } %>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCaptionBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  <tbody class="mcnCaptionBlockOuter">
+    <tr>
+      <td class="mcnCaptionBlockInner" valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+        <table border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightContentOuter" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+          <tbody>
+            <tr>
+              <td valign="top" class="mcnCaptionRightContentInner" width="36" style="padding: 0 0 0 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="mcnCaptionRightImageContentContainer" style="margin-right:10px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <tbody>
+                    <tr>
+                      <td class="mcnCaptionRightImageContent" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                        <img alt="" src="https://gallery.mailchimp.com/e0977c739b58029d874c230da/images/90ebcc94-29b0-4150-b905-fe7e334722df.png" width="36" style="max-width: 36px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage">
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td valign="top" class="mcnCaptionRightContentInner" style="padding: 0 9px 0 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnCaptionRightTextContentContainer" align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                  <tbody>
+                    <tr>
+                      <td valign="top" class="mcnTextContent" style="font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-size: 16px;line-height: 210%;text-align: left;">
+                        <span style="color:#8CC947"><%- translations['mail.newsletter.heading3'] %></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<% if(trashes.cleaned.length) { %>
+
+  <% trashes.cleaned.forEach(trash => { %>
+    <%- include('block-trash', {baseUrl: baseUrl, trash: trash}); %>
+  <% }) %>
+
+<% } else { %>
+  <%- include('block-empty', {baseUrl: baseUrl}); %>
+<% } %>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  <tbody class="mcnTextBlockOuter">
+    <tr>
+      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="600" style="width:600px;">
+        <![endif]-->
+        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+          <tbody><tr>
+
+              <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                <span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif"><%- translations['mail.newsletter.p2'] %> <a href="<%- baseUrl + (organizationId ? '/organizations/detail/' + organizationId : '/my-profile/') %>" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #2BAADF;font-weight: normal;text-decoration: underline;"><%- translations['mail.newsletter.p3'] %></a> <%- translations['mail.newsletter.p4'] %><br>
+                  <br>
+                  <span style="color:#8cc947"><%- translations['mail.newsletter.p5'] %></span>
+                </span>
+              </td>
+            </tr>
+          </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%- include('../includes/footer', {baseUrl: baseUrl, reason: translations['mail.newsletter.footer'] + ' <a href="https://admin.trashout.ngo/my-profile/" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #2BAADF;font-weight: normal;text-decoration: underline;">' + translations['mail.newsletter.footerLink'] + '</a>.'}); %>

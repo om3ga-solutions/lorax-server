@@ -1,0 +1,46 @@
+{
+  "name": "CollectionPointActivityHasCollectionPointType",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "collection_point_activity_has_collection_point_type"
+    }
+  },
+  "properties": {
+    "collectionPointActivityId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "collection_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "collectionPointTypeId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "collection_point_type_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "collectionPointActivities": {
+      "type": "belongsTo",
+      "model": "CollectionPointActivity",
+      "foreignKey": "collectionPointActivityId"
+    },
+    "types": {
+      "type": "belongsTo",
+      "model": "CollectionPointType",
+      "foreignKey": "collectionPointTypeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

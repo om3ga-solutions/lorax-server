@@ -1,0 +1,93 @@
+{
+  "name": "Comment",
+  "plural": "Comment",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "comment"
+    }
+  },
+  "properties": {
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "organizationId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "trashPointId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_id",
+        "dataType": "integer",
+        "nullable": "NO"
+      }
+    },
+    "body": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "body",
+        "dataType": "text"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "organizationId",
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "trashPoint": {
+      "type": "belongsTo",
+      "model": "TrashPoint",
+      "foreignKey": "trashPointId",
+      "postgresql": {
+        "columnName": "trash_point_id",
+        "dataType": "integer",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

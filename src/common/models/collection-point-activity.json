@@ -1,0 +1,172 @@
+{
+  "name": "CollectionPointActivity",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "collection_point_activity"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "openingHours": {
+      "type": "Object",
+      "postgresql": {
+        "dataType": "text",
+        "columnName": "opening_hours"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "changed": {
+      "type": "Object",
+      "postgresql": {
+        "dataType": "text"
+      }
+    },
+    "collectionPointSizeId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "collection_point_size_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "gpsId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "gps_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "collectionPointId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "collection_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "lastId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "last_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "size": {
+      "type": "belongsTo",
+      "model": "CollectionPointSize",
+      "foreignKey": "collectionPointSizeId",
+      "postgresql": {
+        "columnName": "collection_point_size_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "types": {
+      "type": "hasAndBelongsToMany",
+      "model": "CollectionPointType",
+      "foreignKey": "collectionPointTypeId",
+      "through": "CollectionPointActivityHasCollectionPointType"
+    },
+    "images": {
+      "type": "hasMany",
+      "model": "CollectionPointActivityHasImage",
+      "foreignKey": "collectionPointActivityId",
+      "postgresql": {
+        "columnName": "collection_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "gps": {
+      "type": "belongsTo",
+      "model": "GPS",
+      "foreignKey": "gpsId",
+      "postgresql": {
+        "columnName": "gps_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "history": {
+      "type": "hasMany",
+      "model": "CollectionPointActivity",
+      "foreignKey": "lastId",
+      "columnName": "last_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    },
+    "collectionPoint": {
+      "type": "belongsTo",
+      "model": "CollectionPoint",
+      "foreignKey": "collectionPointId",
+      "postgresql": {
+        "columnName": "collection_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "spam": {
+      "type": "hasMany",
+      "model": "Spam",
+      "foreignKey": "collectionPointActivityId",
+      "columnName": "collection_point_activity_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

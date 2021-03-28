@@ -1,0 +1,121 @@
+{
+  "name": "Spam",
+  "plural": "spam",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "reported": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "resolved": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "trashPointActivityId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "trash_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "collectionPointActivityId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "collection_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "eventId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "trashPointActivity": {
+      "type": "belongsTo",
+      "model": "TrashPointActivity",
+      "foreignKey": "trashPointActivityId",
+      "postgresql": {
+        "columnName": "trash_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "collectionPointActivity": {
+      "type": "belongsTo",
+      "model": "CollectionPointActivity",
+      "foreignKey": "collectionPointActivityId",
+      "postgresql": {
+        "columnName": "collection_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "event": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "eventId",
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }    
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }    
+  ],
+  "methods": {}
+}

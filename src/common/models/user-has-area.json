@@ -1,0 +1,86 @@
+{
+  "name": "UserHasArea",
+  "base": "BaseModel",
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user_has_area"
+    }
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "areaId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "notification": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "nullable": "NO"
+      }
+    },
+    "notificationFrequency": {
+      "type": "number",
+      "required": true,
+      "default": 3600,
+      "postgresql": {
+        "columnName": "notification_frequency",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "userAreaRoleId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_area_role_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "notificationLastSent": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "notification_last_sent",
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    },
+    "area": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "areaId"
+    },
+    "role": {
+      "type": "belongsTo",
+      "model": "UserAreaRole",
+      "foreignKey": "userAreaRoleId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

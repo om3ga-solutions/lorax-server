@@ -1,0 +1,46 @@
+{
+  "name": "TrashPointActivityHasTrashPointType",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "trash_point_activity_has_trash_point_type"
+    }
+  },
+  "properties": {
+    "trashPointActivityId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "trashPointTypeId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_type_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "trashActivities": {
+      "type": "belongsTo",
+      "model": "TrashPointActivity",
+      "foreignKey": "trashPointActivityId"
+    },
+    "types": {
+      "type": "belongsTo",
+      "model": "TrashPointType",
+      "foreignKey": "trashPointTypeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

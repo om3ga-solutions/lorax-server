@@ -1,0 +1,46 @@
+{
+  "name": "CollectionPointHasEvent",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "collection_point_has_event"
+    }
+  },
+  "properties": {
+    "collectionPointId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "collection_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "eventId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "collectionPoints": {
+      "type": "belongsTo",
+      "model": "CollectionPoint",
+      "foreignKey": "collectionPointId"
+    },
+    "events": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "eventId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

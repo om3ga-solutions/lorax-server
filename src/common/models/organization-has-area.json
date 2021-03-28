@@ -1,0 +1,64 @@
+{
+  "name": "OrganizationHasArea",
+  "base": "BaseModel",
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "organization_has_area"
+    }
+  },
+  "properties": {
+    "organizationId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "organization_id",
+        "dataType": "integer",
+        "nullable": "NO"
+      }
+    },
+    "areaId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "integer",
+        "nullable": "NO"
+      }
+    },
+    "notificationFrequency": {
+      "type": "number",
+      "required": true,
+      "default": 3600,
+      "postgresql": {
+        "columnName": "notification_frequency",
+        "dataType": "integer",
+        "nullable": "YES"
+      }
+    },
+    "notificationLastSent": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "notification_last_sent",
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "organization": {
+      "type": "belongsTo",
+      "model": "Organization",
+      "foreignKey": "organizationId"
+    },
+    "area": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "areaId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

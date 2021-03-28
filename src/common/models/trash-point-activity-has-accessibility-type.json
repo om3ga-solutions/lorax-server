@@ -1,0 +1,46 @@
+{
+  "name": "TrashPointActivityHasAccessibilityType",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "trash_point_activity_has_accessibility_type"
+    }
+  },
+  "properties": {
+    "trashPointActivityId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "accessibilityTypeId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "accessibility_type_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "trashActivities": {
+      "type": "belongsTo",
+      "model": "TrashPointActivity",
+      "foreignKey": "trashPointActivityId"
+    },
+    "types": {
+      "type": "belongsTo",
+      "model": "AccessibilityType",
+      "foreignKey": "accessibilityTypeId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,310 @@
+{
+  "name": "User",
+  "plural": "User",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user"
+    }
+  },
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "first_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "lastName": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "last_name",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "email": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "email",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "info": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "info",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "birthdate": {
+      "type": "date",
+      "required": false,
+      "postgresql": {
+        "columnName": "birthdate",
+        "dataType": "date",
+        "nullable": "YES"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "created",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    },
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "postgresql": {
+        "columnName": "active",
+        "dataType": "boolean",
+        "nullable": "NO"
+      }
+    },
+    "newsletter": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "postgresql": {
+        "columnName": "newsletter",
+        "dataType": "boolean",
+        "nullable": "NO"
+      }
+    },
+    "imageId": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "uid": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "uid",
+        "dataType": "text",
+        "nullable": "NO",
+        "unique": "YES"
+      }
+    },
+    "tokenFCM": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "token_fcm",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "facebookUID": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "facebook_uid",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "facebookUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "facebook_url",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "twitterUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "twitter_url",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "googlePlusUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "google_plus_url",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "phone_number",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "points": {
+      "type": "number",
+      "required": true,
+      "default": 0,
+      "postgresql": {
+        "columnName": "points",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "reviewed": {
+      "type": "string",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "YES"
+      }
+    },
+    "eventOrganizer": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "event_organizer",
+        "dataType": "boolean",
+        "nullable": "NO"
+      }
+    },
+    "volunteerCleanup": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "volunteer_cleanup",
+        "dataType": "boolean",
+        "nullable": "NO"
+      }
+    },
+    "trashActivityEmailNotification": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "postgresql": {
+        "columnName": "trash_activity_email_notification",
+        "dataType": "boolean",
+        "nullable": "NO"
+      }
+    },
+    "userRoleId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_role_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "language": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "language",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "userRole": {
+      "type": "belongsTo",
+      "model": "UserRole",
+      "foreignKey": "userRoleId",
+      "postgresql": {
+        "columnName": "user_role_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "userHasOrganization": {
+      "type": "hasMany",
+      "model": "UserHasOrganization"
+    },
+    "userHasBadge": {
+      "type": "hasMany",
+      "model": "UserHasBadge"
+    },
+    "userHasArea": {
+      "type": "hasMany",
+      "model": "UserHasArea"
+    },
+    "activity": {
+      "type": "hasMany",
+      "model": "Activity"
+    },
+    "image": {
+      "type": "belongsTo",
+      "model": "Image",
+      "foreignKey": "imageId"
+    },
+    "devices": {
+      "type": "hasMany",
+      "model": "Device"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "firebaseToken",
+      "permission": "ALLOW",
+      "property": ["add"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["add", "upd", "listActivities", "listActivitiesCount", "listUserActivities", "listUserActivitiesCount", "listReviewActivities", "listReviewActivitiesCount", "getUnreviewedUsersWithActivity", "getUnreviewedUsersWithActivityCount", "testGetParameters", "testPostParameters", "addDevice", "deleteDevice", "getDevices"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["add", "upd", "listActivities", "listActivitiesCount", "listUserActivities", "listUserActivitiesCount", "listReviewActivities", "listReviewActivitiesCount", "getUnreviewedUsersWithActivity", "getUnreviewedUsersWithActivityCount", "testGetParameters", "testPostParameters", "getIdentityByFirebaseToken", "addArea", "removeArea", "updateArea", "joinOrganization", "leaveOrganization", "disableUser", "getUsersByEmail", "addDevice", "deleteDevice", "getDevices"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "administrator",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {},
+  "indexes": {
+    "uniqueFirebaseIdIndex": {
+      "uid": {
+        "options": {
+          "unique": true
+        }
+      }
+    }
+  }
+}

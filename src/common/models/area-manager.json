@@ -1,0 +1,46 @@
+{
+  "name": "AreaManager",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "area_manager"
+    }
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "areaId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId"
+    },
+    "area": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "areaId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

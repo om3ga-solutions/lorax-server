@@ -1,0 +1,57 @@
+{
+  "name": "UserRole",
+  "plural": "userRole",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user_role"
+    }
+  },
+  "properties": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "code",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "desription",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["find", "findById"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["find", "findById"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

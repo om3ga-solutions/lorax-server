@@ -1,0 +1,157 @@
+{
+  "name": "PrContent",
+  "plural": "PrContent",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "pr_content"
+    }
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "title",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "body",
+        "dataType": "text"
+      }
+    },
+    "bodyMarkdown": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "body_markdown",
+        "dataType": "text"
+      }
+    },
+    "language": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "language",
+        "dataType": "text"
+      }
+    },
+    "tags": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "tags",
+        "dataType": "text"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint"
+      }
+    },
+    "areaId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "bigint"
+      }
+    },
+    "appIosUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "app_ios_url",
+        "dataType": "text"
+      }
+    },
+    "appAndroidUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "app_android_url",
+        "dataType": "text"
+      }
+    },
+    "appWindowsUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "app_windows_url",
+        "dataType": "text"
+      }
+    },
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "created",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint"
+      }
+    },
+    "area": {
+      "type": "belongsTo",
+      "model": "Area",
+      "foreignKey": "areaId",
+      "postgresql": {
+        "columnName": "area_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "prContentHasImage": {
+      "type": "hasMany",
+      "model": "PrContentHasImage"
+    },
+    "prContentVideo": {
+      "type": "hasMany",
+      "model": "PrContentVideo"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["find", "findById", "list", "listCount", "detail"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }    
+  ],
+  "methods": {}
+}

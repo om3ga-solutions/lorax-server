@@ -1,0 +1,19 @@
+{
+  "name": "Redis",
+  "plural": "Redis",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "apiKey": {
+      "type": "string",
+      "index": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

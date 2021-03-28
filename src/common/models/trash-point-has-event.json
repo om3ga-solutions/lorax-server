@@ -1,0 +1,46 @@
+{
+  "name": "TrashPointHasEvent",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "trash_point_has_event"
+    }
+  },
+  "properties": {
+    "trashPointId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "trash_point_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "eventId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "event_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "trashPoints": {
+      "type": "belongsTo",
+      "model": "TrashPoint",
+      "foreignKey": "trashPointId"
+    },
+    "events": {
+      "type": "belongsTo",
+      "model": "Event",
+      "foreignKey": "eventId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

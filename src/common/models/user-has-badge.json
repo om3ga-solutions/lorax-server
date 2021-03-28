@@ -1,0 +1,56 @@
+{
+  "name": "UserHasBadge",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "user_has_badge"
+    }
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "badgeId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "badge_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "badge": {
+      "type": "belongsTo",
+      "model": "Badge",
+      "foreignKey": "badgeId",
+      "postgresql": {
+        "columnName": "badge_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

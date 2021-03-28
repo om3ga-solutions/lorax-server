@@ -1,0 +1,46 @@
+{
+  "name": "CollectionPointActivityHasImage",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "collection_point_activity_has_image"
+    }
+  },
+  "properties": {
+    "collectionPointActivityId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "collection_point_activity_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "imageId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "imageKeys": {
+      "type": "belongsTo",
+      "model": "Image",
+      "foreignKey": "imageId",
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

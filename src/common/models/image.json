@@ -1,0 +1,90 @@
+{
+  "name": "Image",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created": {
+      "type": "string",
+      "required": false,
+      "default": "$now",
+      "postgresql": {
+        "columnName": "created",
+        "dataType": "timestamp",
+        "nullable": "NO"
+      }
+    },
+    "fullStorageLocation": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "full_storage_location",
+        "nullable": "NO"
+      }
+    },
+    "fullDownloadUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "full_download_url",
+        "nullable": "NO"
+      }
+    },
+    "thumbDownloadUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "thumb_download_url",
+        "nullable": "NO"
+      }
+    },
+    "thumbStorageLocation": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "thumb_storage_location",
+        "nullable": "NO"
+      }
+    },
+    "thumbRetinaStorageLocation": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "thumb_retina_storage_location",
+        "nullable": "NO"
+      }
+    },
+    "thumbRetinaDownloadUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "thumb_retina_download_url",
+        "nullable": "NO"
+      }
+    },
+    "_oldUrl": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldUrl",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "_oldImageKey": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldImageKey",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

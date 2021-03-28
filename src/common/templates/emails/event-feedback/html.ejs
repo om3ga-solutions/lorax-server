@@ -1,0 +1,76 @@
+<%- include('../includes/header'); %>
+
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+  <tbody>
+    <tr>
+      <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+
+        <p dir="ltr" style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif"><%- translations['mail.eventFeedback.greeting'] %> <%- user.firstName %>,<br>
+            <br>
+            <%- translations['mail.eventFeedback.eventFeedback1'] %> <%- event.name %> <%- translations['mail.eventFeedback.eventFeedback2'] %>&nbsp;
+            <br>
+            <br>
+            <%- translations['mail.eventFeedback.eventFeedback3'] %>
+
+          </span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnButtonBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  <tbody class="mcnButtonBlockOuter">
+    <tr>
+      <td style="padding-top: 0;padding-right: 18px;padding-bottom: 18px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top" align="left" class="mcnButtonBlockInner">
+        <table border="0" cellpadding="0" cellspacing="0" class="mcnButtonContentContainer" style="border-collapse: separate !important;border-radius: 0px;background-color: #8CC947;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+          <tbody>
+            <tr>
+              <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 16px;padding: 15px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <a class="greenButton" title="<%- translations['mail.eventFeedback.feedbackButton'] %>" href="<%- baseUrl %>/events/detail/<%- event.id %>/feedback" target="_blank"><%- translations['mail.eventFeedback.feedbackButton'] %></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+  <tbody class="mcnTextBlockOuter">
+    <tr>
+      <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+        <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="600" style="width:600px;">
+        <![endif]-->
+        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+          <tbody><tr>
+
+              <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                <span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif"><%- organizer.firstName %> <%- organizer.lastName %> <%- translations['mail.eventFeedback.team'] %><br>
+                  <br>
+                  <span style="color:#8cc947"><%- translations['mail.eventFeedback.thanks'] %></span>
+                </span>
+              </td>
+            </tr>
+          </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%- include('../includes/footer', {baseUrl: baseUrl, reason: translations['mail.eventFeedback.footer']}); %>

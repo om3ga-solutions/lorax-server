@@ -1,0 +1,182 @@
+{
+  "name": "Area",
+  "plural": "area",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "centerLat": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "center_lat",
+        "dataType": "numeric",
+        "nullable": "YES"
+      }
+    },
+    "centerLong": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "center_long",
+        "dataType": "numeric",
+        "nullable": "YES"
+      }
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "continent": {
+      "type": "string",
+      "required": false
+    },
+    "country": {
+      "type": "string",
+      "required": false
+    },
+    "aa1": {
+      "type": "string",
+      "required": false
+    },
+    "aa2": {
+      "type": "string",
+      "required": false
+    },
+    "aa3": {
+      "type": "string",
+      "required": false
+    },
+    "locality": {
+      "type": "string",
+      "required": false
+    },
+    "subLocality": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "sub_locality"
+      }
+    },
+    "street": {
+      "type": "string",
+      "required": false
+    },
+    "zip": {
+      "type": "string",
+      "required": false
+    },
+    "zoomLevel": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "zoom_level",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "aliasId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "alias_id",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "stillHere": {
+      "type": "number",
+      "required": true,
+      "default": 0,
+      "postgresql": {
+        "columnName": "tr_cached_still_here",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "more": {
+      "type": "number",
+      "required": true,
+      "default": 0,
+      "postgresql": {
+        "columnName": "tr_cached_more",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "less": {
+      "type": "number",
+      "required": true,
+      "default": 0,
+      "postgresql": {
+        "columnName": "tr_cached_less",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "cleaned": {
+      "type": "number",
+      "required": true,
+      "default": 0,
+      "postgresql": {
+        "columnName": "tr_cached_cleaned",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "_oldId": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "_oldId",
+        "dataType": "bigint",
+        "nullable": "YES"
+      }
+    },
+    "diagonal": {
+      "type": "number",
+      "required": false,
+      "postgresql": {
+        "columnName": "diagonal",
+        "dataType": "int",
+        "nullable": "YES"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "aliases": {
+      "type": "hasMany",
+      "model": "Area",
+      "foreignKey": "aliasId",
+      "columnName": "alias_id",
+      "dataType": "bigint",
+      "nullable": "YES"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["list", "aliases", "findById"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["list", "aliases", "findById"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }    
+  ],
+  "methods": {}
+}

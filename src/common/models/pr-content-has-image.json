@@ -1,0 +1,64 @@
+{
+  "name": "PrContentHasImage",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "pr_content_has_image"
+    }
+  },
+  "properties": {
+    "isMain": {
+      "type": "boolean",
+      "default": true,
+      "postgresql": {
+        "columnName": "is_main",
+        "dataType": "boolean"
+      }
+    },
+    "imageId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "prContentId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "pr_content_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "prContent": {
+      "type": "belongsTo",
+      "model": "PrContent",
+      "foreignKey": "prContentId",
+      "postgresql": {
+        "columnName": "pr_content_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "image": {
+      "type": "belongsTo",
+      "model": "Image",
+      "foreignKey": "imageId",
+      "postgresql": {
+        "columnName": "image_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

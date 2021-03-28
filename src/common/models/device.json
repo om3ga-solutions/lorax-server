@@ -1,0 +1,95 @@
+{
+  "name": "Device",
+  "plural": "Device",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "device"
+    }
+  },
+  "properties": {
+    "created": {
+      "type": "string",
+      "required": true,
+      "default": "$now",
+      "postgresql": {
+        "dataType": "timestamp with time zone",
+        "nullable": "NO"
+      }
+    },
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    },
+    "tokenFCM": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "token_fcm",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    },
+    "deviceId": {
+      "type": "string",
+      "required": false,
+      "postgresql": {
+        "columnName": "device_id",
+        "dataType": "text",
+        "nullable": "YES"
+      }
+    },
+    "language": {
+      "type": "string",
+      "required": true,
+      "postgresql": {
+        "columnName": "language",
+        "dataType": "text",
+        "nullable": "NO"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "userId",
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "bigint",
+        "nullable": "NO"
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "apiKey",
+      "permission": "ALLOW",
+      "property": ["getTrash", "list", "listCount", "zoomPoints"]
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "common",
+      "permission": "ALLOW",
+      "property": ["getTrash", "list", "listCount", "zoomPoints", "reportTrash", "updateTrash", "deleteTrash", "deleteActivity", "deleteActivityImage"]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superAdmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
